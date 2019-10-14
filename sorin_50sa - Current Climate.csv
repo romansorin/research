@@ -1,12 +1,4 @@
 id,Title,Author,URL,Bibliography,In text,Brief summary,Use?
-
-Find at least 10 Sources that expose the current climate of your topic. 
-Place these in the Current Climate section of your document.
-Places to look: THESE MUST BE PEER REVIEWED
-Google Scholar, EBSCO, PubMed, Research Gate, ERIC, JSTOR, etc.
-
-Rationale: Further exposes the gap in your research.
-
 1,"Convolutional Deep Belief Networks for Scalable Unsupervised Learning of Hierarchical Representations","Lee, H., Grosse, R., Ranganath, R. and Ng, A","","[1]H. Lee, R. Grosse, R. Ranganath and A. Ng, 'Unsupervised learning of hierarchical representations with convolutional deep belief networks', Communications of the ACM, vol. 54, no. 10, p. 95, 2011. Available: 10.1145/2001269.2001295.","[1]","Presentation of an unsupervised deep learning model which presents performant image and object feature recognition, visual task recognition, and formation of hierarchical inference regarding images.","Unsure"
 2,"Design-inclusive UX research: design as a part of doing user experience research","","","","","",""
 3,"Diagnosing User Perception and Acceptance using Eye Tracking in Web-based End-User Development","","","","","",""
