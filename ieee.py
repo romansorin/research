@@ -1,9 +1,4 @@
-
-types = {
-    'JOURNAL': 'journal',
-    'BOOK': 'book',
-    'ARTICLE': 'article'
-}
+import types
 
 info = {
     'authors': ['R. Sorin', 'R. M. Sorin', 'dsdsd']
@@ -55,12 +50,12 @@ class Article(Reference):
 
 
 def generate_citation(type, info):
-    if type == types['JOURNAL']:
+    if type == types.JOURNAL:
         return Journal(info).cite()
-    elif type == types['BOOK']:
+    elif type == types.BOOK:
         return Book(info).cite()
-    elif type == types['ARTICLE']:
+    elif type == types.ARTICLE:
         return Article(info).cite()
 
 
-print(generate_citation('journal'))
+print(generate_citation('journal', info))
