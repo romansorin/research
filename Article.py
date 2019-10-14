@@ -1,4 +1,4 @@
-import Reference
+from Reference import Reference
 
 class Article(Reference):
     def __init__(self, info):
