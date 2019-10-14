@@ -1,9 +1,9 @@
-id,Title,Author,URL,Bibliography,In text,Brief summary,Use?
-1,"UX Design and Agile: A Natural Fit?","","","","","",""
-2,"A Strategic Approach to Metrics for User Experience Designers","","","","","",""
-3,"Componentizing the Web","","","","","",""
-4,"Sample Size in usability Studies","","","","","",""
-5,"the evolution of Web Development for mobile Devices","","","","","",""
-6,"Max of 5: decision on exact sources will be made with time.","n/a","n/a","n/a","n/a","n/a","n/a"
-7,"Why Agile Teams Fail Without UX Research","","","","","",""
-8,"You've got to sweat the small stuff","","","","","",""
+id ,Title                                                           ,Author ,URL   ,Bibliography ,Brief summary ,Use?
+1  ,"UX Design and Agile: A Natural Fit?"                           ,""     ,""    ,""           ,""            ,""
+2  ,"A Strategic Approach to Metrics for User Experience Designers" ,""     ,""    ,""           ,""            ,""
+3  ,"Componentizing the Web"                                        ,""     ,""    ,""           ,""            ,""
+4  ,"Sample Size in usability Studies"                              ,""     ,""    ,""           ,""            ,""
+5  ,"The Evolution of Web Development for Mobile Devices"           ,""     ,""    ,""           ,""            ,""
+6  ,"Max of 5: decision on exact sources will be made with time."   ,"n/a"  ,"n/a" ,"n/a"        ,"n/a"         ,"n/a"
+7  ,"Why Agile Teams Fail Without UX Research"                      ,""     ,""    ,""           ,""            ,""
+8  ,"You've got to sweat the small stuff"                           ,""     ,""    ,""           ,""            ,""
