@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import Book
-import Journal
-import Article
+from Book import Book
+from Journal import Journal
+from Article import Article
 
 JOURNAL = 'journal'
 BOOK = 'book'
