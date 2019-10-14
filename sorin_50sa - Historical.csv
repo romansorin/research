@@ -1,8 +1,8 @@
-id,Title,Author,URL,Bibliography,In text,Brief summary,Use?
-1,"Beyond Information Architecture:A Systems Integration Approach to Web-site Design","","","","","",""
-2,"DEEP REINFORCEMENT LEARNING: AN OVERVIEW","","","","","",""
-3,"Fundamentals of physiological computing","","","","","",""
-4,"Improving user-interface dependability through mitigation of human error","","","","","",""
-5,"On tangible user interfaces, humans and spatiality","","","","","",""
-6,"On the Origin of Deep Learning","","","","","",""
-7,"Representation Learning: A Review and New Perspectives","","","","","",""
+id ,Title                                                                               ,Author ,URL ,Bibliography ,Brief summary ,Use?
+1  ,"Beyond Information Architecture:A Systems Integration Approach to Web-site Design" ,""     ,""  ,""           ,""            ,""
+2  ,"DEEP REINFORCEMENT LEARNING: AN OVERVIEW"                                          ,""     ,""  ,""           ,""            ,""
+3  ,"Fundamentals of physiological computing"                                           ,""     ,""  ,""           ,""            ,""
+4  ,"Improving user-interface dependability through mitigation of human error"          ,""     ,""  ,""           ,""            ,""
+5  ,"On tangible user interfaces, humans and spatiality"                                ,""     ,""  ,""           ,""            ,""
+6  ,"On the Origin of Deep Learning"                                                    ,""     ,""  ,""           ,""            ,""
+7  ,"Representation Learning: A Review and New Perspectives"                            ,""     ,""  ,""           ,""            ,"" 
