@@ -14,9 +14,11 @@ ARTICLE = 'article'
 # • Title of article, patent, conference paper, etc., in quotation marks.
 # • Title of journal or book in italics.
 
+# So: Author names, "Title of article", __Title of journal__
+
 info = {
-    'authors': ['R. Sorin', 'R. M. Sorin', 'dsdsd'],
-    'article': 'Neural Networks',
+    'authors': ['R. Sorin', 'R. M. Sorin', '"dsdsd"'],
+    'article': '"Neural Networks"',
     'journal': 'Algorithms Designed'
 }
 
