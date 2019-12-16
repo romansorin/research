@@ -31,6 +31,8 @@ Lorem ipsum dolor...
 
 ## Introduction
 
+Lorem ipsum dolor...[1]
+
 4 parts:
 
 1) Wordy phrases giving reason for work & interest — why read the paper?
@@ -48,9 +50,11 @@ According to Stanford CS department:
 
 ### What is the problem
 
+Lorem ipsum
+
 ### Why is it interesting and important
 
-Talk about importance of UX and user satisfaction, growth of sites and products, finding the answer to "what are the most optimal layouts" can serve as being beneficial to businesses (financial and social capital), designers looking to optimize their experiences and focus on other parts, and developers to implement MVPs and "tried-and-true" layouts
+Talk about importance of user experience (UX) and user satisfaction, growth of sites and products, finding the answer to "what are the most optimal layouts" can serve as being beneficial to businesses (financial and social capital), designers looking to optimize their experiences and focus on other parts, and developers to implement Minimum Viable Products (MVPs) and "tried-and-true" layouts
 
 ### Why is it hard (e.g., why do naive approaches fail?)
 
@@ -58,9 +62,11 @@ Web design, layouts, and sub-components contain a great degree of subjectivity, 
 
 ### Why hasn't it been solved before (Or, what's wrong with previous proposed solutions? How does mine differ?)
 
+Because of the aforementioned limitations of manual analysis, layouts and structures which are deemed to be efficient and successful are strictly subjective and reported on "at-will" basis; this information may come from individual analyses or findings by user experience/user interface researchers, and vary rarely from companies themselves due to concerns of proprietary software and competition. Further, from attempting to find academic works on the integration of machine learning or statistical methods into the web/interface subset of software engineering, it became evident that little to no research with this approach has been done. With the especially exponential growth in recent years and changes in design knowledge/metrics/analytics, much of the existing data are relatively dated. As such, a promising approach is to collect existing data from rankings and then utilize machine learning/algorithms to find the desired patterns or data.
+
 ### What are the key components of my approach and results? Also include any specific limitations
 
-Lorem ipsum dolor...[1]
+Lorem ipsum
 
 ## References
 
