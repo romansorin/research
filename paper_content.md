@@ -70,4 +70,13 @@ Utilization of machine learning pattern/object recognition that feeds screenshot
 
 ## References
 
-[1] <https://romansorin.com>
+[1] Timo Partala, Aleksi Kallinen, Understanding the most satisfying and unsatisfying user experiences: Emotions, psychological needs, and context, Interacting with Computers, Volume 24, Issue 1, January 2012, Pages 25–34, https://doi.org/10.1016/j.intcom.2011.10.001.
+[2] Karpathy, Andrej & Li, Fei Fei. (2015). Deep visual-semantic alignments for generating image descriptions. 3128-3137.
+[3] Zeiler, Matthew & Fergus, Rob. (2013). Visualizing and Understanding Convolutional Neural Networks. ECCV 2014, Part I, LNCS 8689. 8689. 10.1007/978-3-319-10590-1_53.
+[4] Clément Farabet, Camille Couprie, Laurent Najman, Yann Lecun. Learning Hierarchical Features for Scene Labeling. IEEE Transactions on Pattern Analysis and Machine Intelligence, Institute of Electrical and Electronics Engineers, 2013, 35 (8), pp.1915 - 1929. 10.1109/TPAMI.2012.231 . hal- 00742077
+[5] K. Han, B. Hwang and J. Jeon, 'A navigation pattern analysis of university department’s websites using a processing mining approach', Innovations in Education and Teaching International, vol. 52, no. 5, pp. 485-498, 2013. Available: 10.1080/14703297.2013.832634.
+[6] Martín Del Canto, David & López-de-Ipiña, Diego & Alzua-Sorzabal, Aurkene & Lamsfus, Carlos & Torres-Manzanera, Emilio. (2013). A Methodology and a Web Platform for the Collaborative Development of Context-Aware Systems. Sensors (Basel, Switzerland). 13. 6032-53. 10.3390/s130506032.
+[7] Fang, Hao & Gupta, Saurabh & Iandola, Forrest & Srivastava, Rupesh & Deng, li & Dollar, Piotr & Gao, Jianfeng & He, Xiaodong & Mitchell, Margaret & Platt, John & Zitnick, C. & Zweig, Geoffrey. (2015). From captions to visual concepts and back. 1473-1482. 10.1109/CVPR.2015.7298754.
+[8] Sermanet, Pierre & Eigen, David & Zhang, Xiang & Mathieu, Michael & Fergus, Rob & Lecun, Yann. (2013). OverFeat: Integrated Recognition, Localization and Detection using Convolutional Networks. International Conference on Learning Representations (ICLR) (Banff).
+[9] He, Kaiming & Zhang, Xiangyu & Ren, Shaoqing & Sun, Jian. (2016). Deep Residual Learning for Image Recognition. 770-778. 10.1109/CVPR.2016.90.
+[10] Jevremovic, Aleksandar & Adamović, Saša & Veinović, Mladen. (2014). Mousetracking Visitors to Evaluate Efficacy of Web Site Design. Serbian Journal of Electrical Engineering. 00. 23-23. 10.2298/SJEE131223023J.
