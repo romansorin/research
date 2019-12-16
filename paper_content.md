@@ -6,7 +6,6 @@
     - [Author: Roman Sorin](#author-roman-sorin)
     - [Email: roman@romansorin.com](#email-romanromansorincom)
     - [Affiliation: Mentor High School](#affiliation-mentor-high-school)
-  - [Abstract](#abstract)
   - [Introduction](#introduction)
     - [What is the problem](#what-is-the-problem)
     - [Why is it interesting and important](#why-is-it-interesting-and-important)
@@ -24,10 +23,6 @@
 ### Email: roman@romansorin.com
 
 ### Affiliation: Mentor High School
-
-## Abstract
-
-Lorem ipsum dolor...
 
 ## Introduction
 
