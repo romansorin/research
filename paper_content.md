@@ -35,22 +35,22 @@ Lorem ipsum dolor...[1]
 
 4 parts:
 
-1) Wordy phrases giving reason for work & interest — why read the paper?
-2) Brief description of the background to the problem & connection of present work to background
-3) Brief description of the background to the problem & connection of present work to background
-4) Clear statement of the purpose or goal of the work — lead smoothly into start of paper
+1. Wordy phrases giving reason for work & interest — why read the paper?
+2. Brief description of the background to the problem & connection of present work to background
+3. Brief description of the background to the problem & connection of present work to background
+4. Clear statement of the purpose or goal of the work — lead smoothly into start of paper
 
 According to Stanford CS department:
 
-1) What is the problem?
-2) Why is it interesting and important?
-3) Why is it hard? (E.g., why do naive approaches fail?)
-4) Why hasn't it been solved before? (Or, what's wrong with previous proposed solutions? How does mine differ?)
-5) What are the key components of my approach and results? Also include any specific limitations.
+1. What is the problem?
+2. Why is it interesting and important?
+3. Why is it hard? (E.g., why do naive approaches fail?)
+4. Why hasn't it been solved before? (Or, what's wrong with previous proposed solutions? How does mine differ?)
+5. What are the key components of my approach and results? Also include any specific limitations.
 
 ### What is the problem
 
-Lorem ipsum
+Little definitive research exists on the most effective and utilized site layouts in addition to possible associations in UX metrics and variables of success. Recent studies/inquiries by designers have brought up the possibility that the "F / Z patterns" that have been studied and observed in previous research may not be as applicable now than it was then.
 
 ### Why is it interesting and important
 
@@ -66,7 +66,7 @@ Because of the aforementioned limitations of manual analysis, layouts and struct
 
 ### What are the key components of my approach and results? Also include any specific limitations
 
-Lorem ipsum
+Utilization of machine learning pattern/object recognition that feeds screenshots of the collection of pages (highest indexed sites) to identify common patterns and layouts.
 
 ## References
 
