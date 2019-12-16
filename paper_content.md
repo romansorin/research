@@ -45,4 +45,4 @@ Lorem ipsum dolor...[1]
 
 ## References
 
-[1] https://romansorin.com
+[1] <https://romansorin.com>
