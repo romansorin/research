@@ -27,6 +27,19 @@ Importance of this research (why does UX matter?):
 
 Historical information:
 
+Discuess what will be addressed and how (methods):
+
+Current knowledge & approaches:
+  Pattern recognition, image classification:
+  CNNs:
+  Experimental approach:
+  UX metrics:
+  etc.
+
+Define purpose:
+Define goal:
+Define RQ:
+
 
 Forward-facing products and services are known to successfully utilize effective hierarchical structure and layout design patterns to optimize user experience (UX) and associated metrics. Despite widespread knowledge of this need for proper user interfaces (UI), definitive and well-documented records of the most common and effective layouts fail to exist. Little definitive research exists on the most effective and utilized site layouts in addition to possible associations in UX metrics and variables of success. Recent studies/inquiries by designers have brought up the possibility that the "F / Z patterns" that have been studied and observed in previous research may not be as applicable now than it was then. Talk about importance of user experience (UX) and user satisfaction, growth of sites and products, finding the answer to "what are the most optimal layouts" can serve as being beneficial to businesses (financial and social capital), designers looking to optimize their experiences and focus on other parts, and developers to implement Minimum Viable Products (MVPs) and "tried-and-true" layouts.
 
