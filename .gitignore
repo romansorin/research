@@ -126,3 +126,4 @@ dmypy.json
 
 # ide/file editor
 .idea/
+.DS_Store
