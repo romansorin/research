@@ -2,16 +2,19 @@
 
 - [Textual content for research paper](#textual-content-for-research-paper)
   - [Details](#details)
-    - [Title: Identifying and Measuring Ubiquitous Hierarchical Layout Design Patterns](#title-identifying-and-measuring-ubiquitous-hierarchical-layout-design-patterns)
+    - [Title: Identification and Measurement of Hierarchical Layout Patterns on User Experience](#title-identification-and-measurement-of-hierarchical-layout-patterns-on-user-experience)
     - [Author: Roman Sorin](#author-roman-sorin)
     - [Email: roman@romansorin.com](#email-romanromansorincom)
     - [Affiliation: Mentor High School](#affiliation-mentor-high-school)
   - [Introduction](#introduction)
+    - [Define purpose](#define-purpose)
+    - [Define goal](#define-goal)
+    - [Define RQ](#define-rq)
   - [References](#references)
 
 ## Details
 
-### Title: Identifying and Measuring Ubiquitous Hierarchical Layout Design Patterns
+### Title: Identification and Measurement of Hierarchical Layout Patterns on User Experience
 
 ### Author: Roman Sorin
 
@@ -27,18 +30,23 @@ Importance of this research (why does UX matter?):
 
 Historical information:
 
-Discuess what will be addressed and how (methods):
+Discuss what will be addressed and how (methods):
 
 Current knowledge & approaches:
-  Pattern recognition, image classification:
-  CNNs:
-  Experimental approach:
-  UX metrics:
-  etc.
 
-Define purpose:
-Define goal:
-Define RQ:
+- Pattern recognition, image classification:
+- CNNs:
+- Experimental approach:
+- UX metrics:
+
+### Define purpose
+
+### Define goal
+
+### Define RQ
+
+- 1: How do hierarchical layouts impact associated user experience metrics?
+- 2: How can features best be implemented to optimize a greater range of these metrics?
 
 Forward-facing products and services are known to successfully utilize effective hierarchical structure and layout design patterns to optimize user experience (UX) and associated metrics. Despite widespread knowledge of this need for proper user interfaces (UI), definitive and well-documented records of the most common and effective layouts fail to exist. Little definitive research exists on the most effective and utilized site layouts in addition to possible associations in UX metrics and variables of success. Recent studies/inquiries by designers have brought up the possibility that the "F / Z patterns" that have been studied and observed in previous research may not be as applicable now than it was then. Talk about importance of user experience (UX) and user satisfaction, growth of sites and products, finding the answer to "what are the most optimal layouts" can serve as being beneficial to businesses (financial and social capital), designers looking to optimize their experiences and focus on other parts, and developers to implement Minimum Viable Products (MVPs) and "tried-and-true" layouts.
 
@@ -46,10 +54,9 @@ Web design, layouts, and sub-components contain a great degree of subjectivity, 
 
 Thus, this paper seeks to identify the most effective hierarchical structures and patterns seen in highest-indexing sites, and measure which UX metrics can be best associated with a given layout.
 
-
 ## References
 
-[1] Timo Partala, Aleksi Kallinen, Understanding the most satisfying and unsatisfying user experiences: Emotions, psychological needs, and context, Interacting with Computers, Volume 24, Issue 1, January 2012, Pages 25–34, https://doi.org/10.1016/j.intcom.2011.10.001.
+[1] Timo Partala, Aleksi Kallinen, Understanding the most satisfying and unsatisfying user experiences: Emotions, psychological needs, and context, Interacting with Computers, Volume 24, Issue 1, January 2012, Pages 25–34, 10.1016/j.intcom.2011.10.001.
 [2] Karpathy, Andrej & Li, Fei Fei. (2015). Deep visual-semantic alignments for generating image descriptions. 3128-3137.
 [3] Zeiler, Matthew & Fergus, Rob. (2013). Visualizing and Understanding Convolutional Neural Networks. ECCV 2014, Part I, LNCS 8689. 8689. 10.1007/978-3-319-10590-1_53.
 [4] Clément Farabet, Camille Couprie, Laurent Najman, Yann Lecun. Learning Hierarchical Features for Scene Labeling. IEEE Transactions on Pattern Analysis and Machine Intelligence, Institute of Electrical and Electronics Engineers, 2013, 35 (8), pp.1915 - 1929. 10.1109/TPAMI.2012.231 . hal- 00742077
