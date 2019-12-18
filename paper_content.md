@@ -2,7 +2,7 @@
 
 - [Textual content for research paper](#textual-content-for-research-paper)
   - [Details](#details)
-    - [Title: Identifying and Measuring Ubiqutous Hierarchical Layout Design Patterns](#title-identifying-and-measuring-ubiqutous-hierarchical-layout-design-patterns)
+    - [Title: Identifying and Measuring Ubiquitous Hierarchical Layout Design Patterns](#title-identifying-and-measuring-ubiquitous-hierarchical-layout-design-patterns)
     - [Author: Roman Sorin](#author-roman-sorin)
     - [Email: roman@romansorin.com](#email-romanromansorincom)
     - [Affiliation: Mentor High School](#affiliation-mentor-high-school)
@@ -11,7 +11,7 @@
 
 ## Details
 
-### Title: Identifying and Measuring Ubiqutous Hierarchical Layout Design Patterns
+### Title: Identifying and Measuring Ubiquitous Hierarchical Layout Design Patterns
 
 ### Author: Roman Sorin
 
@@ -40,13 +40,11 @@ Define purpose:
 Define goal:
 Define RQ:
 
-
 Forward-facing products and services are known to successfully utilize effective hierarchical structure and layout design patterns to optimize user experience (UX) and associated metrics. Despite widespread knowledge of this need for proper user interfaces (UI), definitive and well-documented records of the most common and effective layouts fail to exist. Little definitive research exists on the most effective and utilized site layouts in addition to possible associations in UX metrics and variables of success. Recent studies/inquiries by designers have brought up the possibility that the "F / Z patterns" that have been studied and observed in previous research may not be as applicable now than it was then. Talk about importance of user experience (UX) and user satisfaction, growth of sites and products, finding the answer to "what are the most optimal layouts" can serve as being beneficial to businesses (financial and social capital), designers looking to optimize their experiences and focus on other parts, and developers to implement Minimum Viable Products (MVPs) and "tried-and-true" layouts.
 
 Web design, layouts, and sub-components contain a great degree of subjectivity, room for improvement, and natural iterative processes. It may be extremely costly in both monetary and time resources to find the most effective layouts or hierarchical structures, and what metrics can be best associated with such. Even with analysis of existing layouts and successful implementations, doing so manually is cost-intensive and provides a less objective analysis of content, with subconscious pejoratives or approbations due to typography, colors, and copy resulting in distraction. In data sets which contain a large number of samples, such as a set of the highest indexed sites on Google (e.g., 10000), identification of both common and more intricate patterns are incredibly difficult to find. In contrast, statistical methods and the use of trained algorithmic models can have high success rates in identifying patterns which may otherwise not be seen. Thus, there is a chance that integrating algorithmic models into site analysis to identify patterns may more significantly benefit the field of software engineering. Because of the aforementioned limitations of manual analysis, layouts and structures which are deemed to be efficient and successful are strictly subjective and reported on "at-will" basis; this information may come from individual analyses or findings by user experience/user interface researchers, and vary rarely from companies themselves due to concerns of proprietary software and competition. Further, from attempting to find academic works on the integration of machine learning or statistical methods into the web/interface subset of software engineering, it became evident that little to no research with this approach has been done. With the especially exponential growth in recent years and changes in design knowledge/metrics/analytics, much of the existing data are relatively dated. As such, a promising approach is to collect existing data from rankings and then utilize machine learning/algorithms to find the desired patterns or data. Utilization of machine learning pattern/object recognition that feeds screenshots of the collection of pages (highest indexed sites) to identify common patterns and layouts.
 
 Thus, this paper seeks to identify the most effective hierarchical structures and patterns seen in highest-indexing sites, and measure which UX metrics can be best associated with a given layout.
-
 
 
 ## References
