@@ -26,9 +26,11 @@
 
 Current scope/importance of present day info (current climate):
 
+Research on this field is limited. While both fields of software engineering and machine learning have individually been addressed and researched, there are very few studies which look at a possible integration of machine learning with software engineering (more specifically, web design) and moreover no definite data on how layouts affect certain UX metrics.
+
 Importance of this research (why does UX matter?):
 
-Alongside accessibility and presence of I18n in a web interface, perceived user experiences (notably design, animation, and usability) are one of the most important aspects to consider in the success of product or application interaction.
+Alongside accessibility and presence of I18n in a web interface, perceived user experiences (notably design, animation, and usability) are one of the most important aspects to consider in the success of product or application interaction. The quality of a product's user experience can be the determining factor in user retention, satisfaction, revenue, and other analytical measures. 
 
 Historical information:
 
@@ -43,7 +45,11 @@ Current knowledge & approaches:
 
 ### Define purpose
 
+Purpose of this research is to 1) identify the most common site layouts found from the highest-ranking or indexed sites on the web, and 2) identify what user experience metrics can be best associated with what layouts.
+
 ### Define goal
+
+Goal of this research is to come away with results and findings that can apply to real-world products and services, or further be extended upon by other researchers and agencies.
 
 ### Define RQ
 
