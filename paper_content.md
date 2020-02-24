@@ -56,12 +56,11 @@ The study included both a quantitative and qualitative analysis of user behavior
 
 ## References
 
-[1]"AWS Marketplace: Alexa Top Sites", Aws.amazon.com, 2020. [Online]. Available: https://aws.amazon.com/marketplace/pp/B07QK2XWNV?qid=1555346599089&sr=0-1&ref_=srh_res_product_title. [Accessed: 07-Jan-2020].
+
 [1-bibtex]@misc{antoniou_2015, title={Marketplace}, url={https://aws.amazon.com/marketplace/pp/B07QK2XWNV?qid=1555346599089&sr=0-1&ref_=srh_res_product_title}, journal={Amazon}, publisher={Scb Distributors}, author={Antoniou, Laura}, year={2015}}
 
 
 
-[2]C. Farabet, C. Couprie, L. Najman and Y. LeCun, 'Learning Hierarchical Features for Scene Labeling', IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 35, no. 8, pp. 1915-1929, 2013. Available: 10.1109/tpami.2012.231.
 
 [2-bibtex]@article{article,
 author = {Farabet, Clement and Couprie, Camille and Najman, Laurent and Lecun, Yann},
@@ -74,7 +73,7 @@ journal = {IEEE transactions on pattern analysis and machine intelligence},
 doi = {10.1109/TPAMI.2012.231}
 }
 
-[3]Dede Frederick, James Mohler, Mihaela Vorvoreanu, and Ronald Glotzbach. 2015. The effects of parallax scrolling on user experience in web design. J. Usability Studies 10, 2 (February 2015), 87-95.
+
 [3-bibtex]@article{article,
 author = {Frederick, Dede},
 year = {2015},
@@ -85,7 +84,6 @@ volume = {Volume 10},
 journal = {Journal of Usability Studies}
 }
 
-[4]Ferreira, Jennifer & Noble, James & Biddle, Robert. (2007). Agile Development Iterations and UI Design. 50-58. 10.1109/AGILE.2007.8.
 [4-bibtex]@INPROCEEDINGS{4293575,
 author={J. {Ferreira} and J. {Noble} and R. {Biddle}},
 booktitle={Agile 2007 (AGILE 2007)},
@@ -99,7 +97,6 @@ doi={10.1109/AGILE.2007.8},
 ISSN={null},
 month={Aug},}
 
-[5]G. Desolda, C. Ardito, M. Costabile and M. Matera, "End-user composition of interactive applications through actionable UI components", Journal of Visual Languages & Computing, vol. 42, pp. 46-59, 2017. Available: 10.1016/j.jvlc.2017.08.004.
 [5-bibtex]@article{10.1016/j.jvlc.2017.08.004,
 author = {Desolda, Giuseppe and Ardito, Carmelo and Costabile, Maria Francesca and Matera, Maristella},
 title = {End-User Composition of Interactive Applications through Actionable UI Components},
@@ -121,7 +118,6 @@ keywords = {Web service composition, Mashup model, Utilization study}
   
 
 
-[6]He, Kaiming & Zhang, Xiangyu & Ren, Shaoqing & Sun, Jian. (2016). Deep Residual Learning for Image Recognition. 770-778. 10.1109/CVPR.2016.90.
 [6-bibtex]@INPROCEEDINGS{7780459,
 author={K. {He} and X. {Zhang} and S. {Ren} and J. {Sun}},
 booktitle={2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
@@ -135,7 +131,6 @@ doi={10.1109/CVPR.2016.90},
 ISSN={1063-6919},
 month={June},}
 
-[7]Hongzhi Li [1], Joseph G. Ellis [2], Lei Zhang [1] and Shih-Fu Chang [2].2018. PatternNet: Visual Pattern Mining with Deep Neural Network. InICMR ’18: 2018 International Conference on Multimedia Retrieval, June 11–14,2018, Yokohama, Japan.ACM, New York, NY, USA, 9 pages. 10.1145/3206025.3206039.
 [7-bibtex]@inproceedings{10.1145/3206025.3206039,
 author = {Li, Hongzhi and Ellis, Joseph G. and Zhang, Lei and Chang, Shih-Fu},
 title = {PatternNet: Visual Pattern Mining with Deep Neural Network},
@@ -154,8 +149,6 @@ series = {ICMR ’18}
 }
   
 
-
-[8]Jevremovic, Aleksandar & Adamović, Saša & Veinović, Mladen. (2014). Mousetracking Visitors to Evaluate Efficacy of Web Site Design. Serbian Journal of Electrical Engineering. 00. 23-23. 10.2298/SJEE131223023J.
 [8-bibtex]@article{article,
 author = {Jevremovic, Aleksandar and Adamović, Saša and Veinović, Mladen},
 year = {2014},
@@ -167,7 +160,6 @@ journal = {Serbian Journal of Electrical Engineering},
 doi = {10.2298/SJEE131223023J}
 }
 
-[9]Porat, Talya & Tractinsky, Noam. (2012). It's a Pleasure Buying Here: The Effects of Web-Store Design on Consumers' Emotions and Attitudes. Human-Computer Interaction. 27. 235-276. 10.1080/07370024.2011.646927.
 [9-bibtex]@article{doi:10.1080/07370024.2011.646927,
 author = { Talya   Porat  and  Noam   Tractinsky },
 title = {It's a Pleasure Buying Here: The Effects of Web-Store Design on Consumers' Emotions and Attitudes},
@@ -190,7 +182,6 @@ eprint = {
 
 }
 
-[10]R. Veral and J. Macías, "Supporting user-perceived usability benchmarking through a developed quantitative metric", International Journal of Human-Computer Studies, vol. 122, pp. 184-195, 2019. Available: 10.1016/j.ijhcs.2018.09.012.
 [10-bibtex]@article{article,
 author = {Veral, Roberto and Macías, José},
 year = {2018},
@@ -202,7 +193,7 @@ journal = {International Journal of Human-Computer Studies},
 doi = {10.1016/j.ijhcs.2018.09.012}
 }
 
-[11]S. Fairclough, "Fundamentals of physiological computing", Interacting with Computers, vol. 21, no. 1-2, pp. 133-145, 2009. Available: 10.1016/j.intcom.2008.10.011.
+
 [11-bibtex]@article{10.1145/2688203,
 author = {Silva, Hugo Pl\'{a}cido Da and Fairclough, Stephen and Holzinger, Andreas and Jacob, Robert and Tan, Desney},
 title = {Introduction to the Special Issue on Physiological Computing for Human-Computer Interaction},
@@ -223,7 +214,7 @@ numpages = {4}
   
 
 
-[12]Sermanet, Pierre & Eigen, David & Zhang, Xiang & Mathieu, Michael & Fergus, Rob & Lecun, Yann. (2013). OverFeat: Integrated Recognition, Localization and Detection using Convolutional Networks. International Conference on Learning Representations (ICLR) (Banff).
+
 [12-bibtex]@article{Sermanet2013OverFeatIR,
   title={OverFeat: Integrated Recognition, Localization and Detection using Convolutional Networks},
   author={Pierre Sermanet and David Eigen and Xiang Zhang and Micha{\"e}l Mathieu and Rob Fergus and Yann LeCun},
@@ -232,7 +223,7 @@ numpages = {4}
   volume={abs/1312.6229}
 }
 
-[13]Supavich (Fone) Pengnate, Rathindra Sarathy & JinKyu Lee (2018): The Engagement of Website Initial Aesthetic Impressions: An Experimental Investigation, International Journal of Human–Computer Interaction, DOI: 10.1080/10447318.2018.1554319
+
 [13-bibtex]
 @article{doi:10.1080/10447318.2018.1554319,
 author = {Supavich (Fone) Pengnate and Rathindra Sarathy and JinKyu Lee},
@@ -256,7 +247,7 @@ eprint = {
 
 }
 
-[14]Vinyals, O., Toshev, A., Bengio, S., & Erhan, D. (2015). Show and tell: A neural image caption generator. 2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). doi:10.1109/cvpr.2015.7298935
+
 [14-bibtex]@INPROCEEDINGS{7298935,
 author={O. {Vinyals} and A. {Toshev} and S. {Bengio} and D. {Erhan}},
 booktitle={2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
@@ -270,7 +261,7 @@ doi={10.1109/CVPR.2015.7298935},
 ISSN={1063-6919},
 month={June},}
 
-[15]Wang, Haohan & Raj, Bhiksha. (2017). On the Origin of Deep Learning.
+
 [15-bibtex]
 @inproceedings{Wang2017OnTO,
   title={On the Origin of Deep Learning On the Origin of Deep Learning},
