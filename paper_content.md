@@ -8,6 +8,9 @@
     - [Affiliation: Mentor High School](#affiliation-mentor-high-school)
   - [Introduction](#introduction)
   - [Methods](#methods)
+    - [Participants](#participants)
+    - [Procedure](#procedure)
+    - [Design](#design)
   - [References](#references)
 
 ## Details
@@ -37,9 +40,19 @@ While the fields of software engineering and machine learning have been individu
 
 In data sets which contain a large number of samples, such as a set of the highest indexed sites on the web (minimum 10,000+ indices), manual identification of both common and more intricate patterns are incredibly difficult to find and waste resources. In contrast, statistical methods and the use of trained algorithmic models will have higher rates of success in identifying patterns that may otherwise not be seen. Thus, there is a chance that integrating algorithmic models into site analysis to identify patterns may more significantly benefit the field of software engineering. Because of the aforementioned limitations of manual analysis, layouts and structures which are deemed to be efficient and successful are strictly subjective and reported on an "at-will" basis; this information may come from individual analyses or findings by user experience researchers within case studies or companies. Thus, this paper proposes an approach to find objective data through the collection of existing sites from Alexa Top Sites [1], then programmatically collect screenshots of every site, which will then be fed into a model to identify patterns in layouts. By itself, these data will be of little value to the purpose of this paper and therefore requires implementation and an experimental investigation to identify what metrics are associated in practice rather than strict ranking. Thus, this paper seeks to identify the most common layout hierarchies and patterns seen in the highest-indexing sites and measure which UX metrics can be best associated with a given layout or features.
 
-
 ## Methods
-Methods section here.
+
+### Participants
+
+Approximately fifty to one hundred individuals age 18+ participated in the experimental portion of this study. Approximately 5000 sites were collected from the Amazon Web Services Alexa API and used in feature extraction/KMeans algorithm (clustering).
+
+### Procedure
+
+The current research was done through analysis of Alexa API responses and experimental application of the KMeans clustering. The intended participants included software engineers, data scientists, and UI/UX researchers. By using industry professionals as participants, I aimed to reduce friction that may occur due to inexperience of navigation and task completion, further skewing any results without significant real-world application. These participants are assumed to have experience navigating around interfaces and understanding how to complete the task asked of them. All participants interacted with the layouts through the site built to host this research (https://research.romansorin.com), and tracking/identification by cookies was implemented. Participant emails were also collected at the beginning of the experiment. Cookies contained the id of a randomly chosen variant layout and the individual's user ID assigned on initial project sign-up. Participants were asked to complete a task, which was reaching registration/purchase endpoint, as quickly as possible by navigating through their presented layout.
+
+### Design
+
+The study included both a quantitative and qualitative analysis of user behavior and layouts, respectively. In the first stage of the study (content analysis), queries to the Alexa API were saved, parsed, and sites were extracted from the responses. These sites were then screenshotted and fed into a KMeans model for clustering and identification of commonalities across layouts. These commonalities identified by the algorithm were then analyzed manually, and several layout variants were created to represent the few most common layouts. These layout variants would be shown at random (in A/B variant style) to participants. In the experimental facet of the study, user interaction with the layout was measured through various UX metrics, recorded sessions, analytics, and heatmaps. 
 
 ## References
 
