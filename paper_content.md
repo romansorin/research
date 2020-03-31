@@ -11,6 +11,11 @@
     - [Participants](#participants)
     - [Procedure](#procedure)
     - [Design](#design)
+  - [Results](#results)
+    - [Content analysis results](#content-analysis-results)
+    - [Experimental Results](#experimental-results)
+  - [Discussion and Conclusion](#discussion-and-conclusion)
+  - [Appendix](#appendix)
   - [References](#references)
 
 ## Details
@@ -35,8 +40,8 @@ A major limitation of UX and its applicability is the granularity found within e
 
 While the fields of software engineering and machine learning have been individually addressed and developed, there has yet to be studies that consider the integration of machine learning with the user experience facet in software engineering. Moreover, there are no definite data on how layout hierarchies affect UX metrics. The capability for pattern recognition and hierarchical analysis using machine learning is of high importance concerning layouts and user experience, as models may present possible solutions for identifying patterns within layouts using models and generating labels that may be implemented to identify these desired metrics. Consequently, two research questions are presented:
 
-(1) How does layout hierarchy impact user experience metrics, and what metrics are associated with what hierarchical features?
-(2) How can hierarchical features best be implemented to optimize the overall user experience and address a greater range of provided metrics?
+(1) How does layout hierarchy impact user experience, and what metrics are potentially associated with hierarchical features?
+(2) How can hierarchical features best be implemented to optimize overall user experience?
 
 In data sets which contain a large number of samples, such as a set of the highest indexed sites on the web (minimum 10,000+ indices), manual identification of both common and more intricate patterns are incredibly difficult to find and waste resources. In contrast, statistical methods and the use of trained algorithmic models will have higher rates of success in identifying patterns that may otherwise not be seen. Thus, there is a chance that integrating algorithmic models into site analysis to identify patterns may more significantly benefit the field of software engineering. Because of the aforementioned limitations of manual analysis, layouts and structures which are deemed to be efficient and successful are strictly subjective and reported on an "at-will" basis; this information may come from individual analyses or findings by user experience researchers within case studies or companies. Thus, this paper proposes an approach to find objective data through the collection of existing sites from Alexa Top Sites [1], then programmatically collect screenshots of every site, which will then be fed into a model to identify patterns in layouts. By itself, these data will be of little value to the purpose of this paper and therefore requires implementation and an experimental investigation to identify what metrics are associated in practice rather than strict ranking. Thus, this paper seeks to identify the most common layout hierarchies and patterns seen in the highest-indexing sites and measure which UX metrics can be best associated with a given layout or features.
 
@@ -53,6 +58,16 @@ The current research was done through analysis of Alexa API responses and experi
 ### Design
 
 The study included both a quantitative and qualitative analysis of user behavior and layouts, respectively. In the first stage of the study (content analysis), queries to the Alexa API were saved, parsed, and sites were extracted from the responses. These sites were then screenshotted and fed into a KMeans model for clustering and identification of commonalities across layouts. These commonalities identified by the algorithm were then analyzed manually, and several layout variants were created to represent the few most common layouts. These layout variants would be shown at random (in A/B variant style) to participants. In the experimental facet of the study, user interaction with the layout was measured through various UX metrics, recorded sessions, analytics, and heatmaps. 
+
+## Results
+
+### Content analysis results
+
+### Experimental Results
+
+## Discussion and Conclusion
+
+## Appendix
 
 ## References
 
@@ -145,7 +160,7 @@ pages = {291–299},
 numpages = {9},
 keywords = {image classification, convolutional neural network, visual pattern mining, object proposal},
 location = {Yokohama, Japan},
-series = {ICMR ’18}
+series = {ICMR '18}
 }
   
 
