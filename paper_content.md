@@ -47,6 +47,13 @@ In data sets which contain a large number of samples, such as a set of the highe
 
 ## Methods
 
+ A two-fold approach was selected to gather data regarding layouts. The first approach was an analysis of {NUMBER} sites that were pulled from the Amazon Alexa API for Top Sites. These sites were then parsed and filtered to identify possible network connectivity issues and dead sites. The remaining sites were then screenshotted, and sites that had the same domain but different subdomains were compared using an image similarity algorithm provided by an API, and then filtered out if they were within a threshold of {THRESHOLD}. The remaining sites were then fed into a KMeans algorithm which created four clusters. Within each cluster, KMeans was ran again to find {NUMBER} subclusters to make identification of patterns/layout density easier. Images within each subcluster were then overlayed and each subcluster was manually analyzed to identify common components/layouts. These components were then merged together and re-analyzed for error/logical layout. In the end, THREE variants were identified by density and object placement, and comparitive template layouts were created for the experimental portion of the experiment.
+
+The experimental portion of study consisted of randomly assigning the participant to one of three variants built out from the identified layouts. Participants were instructed to navigate throughout the layout and figure out how to "sign up" or "get started" with the presented product. When beginning the experiment, a document ID was assigned and their session start was recorded. They were redirected to the assigned variant and navigated; when they finished, the time they ended was recorded in the document. The session length was then calculated for data analysis.
+
+Heatmaps were installed but due to technical errors did not record behavior. This is a common avenue of identifying/tracking behavior (cite something here)
+
+
 ### Participants
 
 Approximately fifty to one hundred individuals age 18+ participated in the experimental portion of this study. Approximately 5000 sites were collected from the Amazon Web Services Alexa API and used in feature extraction/KMeans algorithm (clustering).
@@ -57,9 +64,23 @@ The current research was done through analysis of Alexa API responses and experi
 
 ### Design
 
-The study included both a quantitative and qualitative analysis of user behavior and layouts, respectively. In the first stage of the study (content analysis), queries to the Alexa API were saved, parsed, and sites were extracted from the responses. These sites were then screenshotted and fed into a KMeans model for clustering and identification of commonalities across layouts. These commonalities identified by the algorithm were then analyzed manually, and several layout variants were created to represent the few most common layouts. These layout variants would be shown at random (in A/B variant style) to participants. In the experimental facet of the study, user interaction with the layout was measured through various UX metrics, recorded sessions, analytics, and heatmaps. 
+The study included both a quantitative and qualitative analysis of user behavior and layouts, respectively. In the first stage of the study (content analysis), queries to the Alexa API were saved, parsed, and sites were extracted from the responses. These sites were then screenshotted and fed into a KMeans model for clustering and identification of commonalities across layouts. These commonalities identified by the algorithm were then analyzed manually, and several layout variants were created to represent the few most common layouts. These layout variants would be shown at random (in A/B variant style) to participants. In the experimental facet of the study, user interaction with the layout was measured through various UX metrics, recorded sessions, analytics, and heatmaps.
+
 
 ## Results
+
+Ideas for data analysis:
+- Scatter plots of variants and session times (variant by color, Y axis is session length)
+- correlation between session time and variant; abstract the reasoning out for whyu this could be (i.e., one variant has clearly presented information CTA over another)
+- regression analysis
+
+
+Implications:
+
+Limitations:
+
+Directions for research:
+
 
 ### Content analysis results
 
@@ -186,10 +207,7 @@ year  = {2012},
 publisher = {Taylor & Francis},
 doi = {10.1080/07370024.2011.646927},
 
-URL = { 
-        https://www.tandfonline.com/doi/abs/10.1080/07370024.2011.646927
-    
-},
+URL = { https://www.tandfonline.com/doi/abs/10.1080/07370024.2011.646927},
 eprint = { 
         https://www.tandfonline.com/doi/pdf/10.1080/07370024.2011.646927
     
