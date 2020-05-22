@@ -9,7 +9,8 @@
   - [Introduction](#introduction)
   - [Methods](#methods)
     - [Participants](#participants)
-    - [Procedure](#procedure)
+    - [Analytical Procedure](#analytical-procedure)
+    - [Experimental Procedure](#experimental-procedure)
     - [Design](#design)
   - [Results](#results)
     - [Content analysis results](#content-analysis-results)
@@ -56,21 +57,19 @@ Heatmaps were installed but due to technical errors did not record behavior. Thi
 
 ### Participants
 
-The study involved 57 individuals who voluntarily participated in the experimental portion of layout analysis. Individuals were age 18 and older, with all participants being from the United States. All participants were expected to have familiarity and experience with navigating layouts and websites, and several individuals had several years of work experience in software engineering and computer science. No compensation or reimbursement was provided for voluntary involvement in the study. All participants successfully completed the experiment. Participants were recruited through direct and indirect advertisement/sharing of the study. Participation was limited to devices with a minimum screen width of 1024px (large breakpoint), as only desktop-based layout interfaces were presented. 
+The study involved 57 individuals who voluntarily participated in the experimental portion of layout analysis. Individuals were age 18 and older, with all participants being from the United States. All participants were expected to have familiarity and experience with navigating layouts and websites, and several individuals had several years of work experience in software engineering and computer science. No compensation or reimbursement was provided for voluntary involvement in the study. All participants successfully completed the experiment. Participants were recruited through direct and indirect advertisement/sharing of the study. Participation was limited to devices with a minimum screen width of 1024px (large breakpoint), as only desktop-based layout interfaces were presented. After the experiment, participants were thanked and then provided with an email for further inquiries.
 
---- no >>
-Approximately fifty to one hundred individuals age 18+ participated in the experimental portion of this study. Approximately 5000 sites were collected from the Amazon Web Services Alexa API and used in feature extraction/KMeans algorithm (clustering).
 
-### Procedure
+### Analytical Procedure
 
 Analysis began by querying the AWS Alexa Top Sites API for an initial 1002 sites. The Top Sites API provides the highest ranking sites by region, and the region chosen was "global" for this experiment. After 1002 sites were returned, the responses had to be parsed and cleaned up to identify if there were any sites that were no longer active (i.e., a 500 error) or could not be connected to. Each of the sites were queried for status, and if they existed, an RGB screenshot of the home page (root URL) was taken. Due to lazy loading, infinite scroll, and asynchronous calls, screenshot height was limited to 30000 pixels. The driver then scrolled from each max scroll height every five seconds up until the screenshot maximium height, which upon reaching max height the driver jumped to the 0th pixel and rescrolled in increments of 200 pixels every 0.5 seconds and took a full page screenshot. This secondary scroll pass ensured that content would have loaded by the time the screenshot was taken. Pages that were not active were ignored by the driver, and the function moved to the next site. After all RGB screenshots were taken, a secondary image processing step was taken: conversion of all RGB sites to greyscale to eliminate the influence of color on clustering and image similarity. Many sites were found to have a presence of subdomains or TLDs due to regional or content differences, however these could not be automatically eliminated due to the fact that different subdomains could serve different purposes — a subdomain may map to a dashboard, another may handle support channels, etc. Instead, sites with the same root domain (ignoring both the subdomain and TLDs) were compared using an image similarity API provided by OpenAI. The greyscale versions of these same root domains but differing subdomains or TLDs were compared to each other; if the site similarity surpassed the arbitrary threshold of fifteen, the higher ranking site/screenshot was kept, and the comparison image was removed from the dataset. However, before image comparisons were done, every greyscale screenshot, regardless of comparison, or unique domains, was cropped to some found height. Filtered domains were sorted using insertion sort to identify base domain and duplicates. Width of the site remained constant due to all screenshots being taken on a single device (width of 2560px), though heights were dependent on the site. Screenshots were iterated over and a flag variable was created to identify the shortest/smallest height dimension to be used for cropping. In order to circumvent any technical glitches, a minimum height of 1440px was set using the opencv cv2 image manipulation lib. Images below this minimum height were removed. After ensuring that all screenshots can be considered "unique" content, these images were then fed into a Keras vgg16 K-Means clustering algorithm with k=4 clusters selected. Due to some clusters containing several hundred images, an image overlaying function was run inside of each cluster to generate subclusters of maximum 50 images each. Subclusters were displayed as a PNG, where the denser parts of the image (greyscale, overlayed weighted 50/50) represented the commonalities of objects/features in layouts. These features were then manually extracted and represented in a mockup. After each cluster's subclusters had mockups generated, mockups were analyzed and some features were detracted from the mockup due to overlapping features/clarity of the layout. After mockups From four clusters, three common layouts could be realistically created and identified, and mockups were then converted into web components with TailwindUI provided components. Each layout was then built out into a web app and a random string identifier was created for each variant. Session length was collected and inserted into Firebase Cloud Store.
-
 Subdomain and root domain were split with a hyphen delimiter. Subdomain and TLD were analyzed separately.
 
-Two separate procedures were used for content analysis and experimentation. Experimentally, participants were randomly assigned one of three variants, and participants could not assign themselves another interface. Participants were instructed to navigate the presented interface as they typically would, with the intention to reach registration or purchase of the presented product/service.
 
+### Experimental Procedure
 
-The current research was done through analysis of Alexa API responses and experimental application of the KMeans clustering. The intended participants included software engineers, data scientists, and UI/UX researchers. By using industry professionals as participants, I aimed to reduce friction that may occur due to inexperience of navigation and task completion, further skewing any results without significant real-world application. These participants are assumed to have experience navigating around interfaces and understanding how to complete the task asked of them. All participants interacted with the layouts through the site built to host this research (https://research.romansorin.com), and tracking/identification by cookies was implemented. Participant emails were also collected at the beginning of the experiment. Cookies contained the id of a randomly chosen variant layout and the individual's user ID assigned on initial project sign-up. Participants were asked to complete a task, which was reaching registration/purchase endpoint, as quickly as possible by navigating through their presented layout.
+The experiment was conducted on a website [cite my site] built to host the experiment and information related to the experiment. Upon viewing on the homepage, users were presented with a message describing the entire study in brief, directions for participation, and information on what data is collected and how it will be used. Consent was provided as users had to manually input their email and press "begin". Upon pressing begin, the participant was randomly assigned to one of three aforementioned layout variants, and they could not assign themselves to another interface. Participants were instructed to navigate and read through the information and structure of the interface as they typically would with a real-world product, and then attempt to register or purchase the presented product or service. After they pressed the relevant buttons/links to begin registration, they were then redirected to the final screen confirming that their participation in the experiment was finished.
+
 
 
 Analysis: One way anova test was ran on the session lengths for each variant. 
@@ -79,16 +78,33 @@ Analysis: One way anova test was ran on the session lengths for each variant.
 
 The study included both a quantitative and qualitative analysis of user behavior and layouts, respectively. In the first stage of the study (content analysis), queries to the Alexa API were saved, parsed, and sites were extracted from the responses. These sites were then screenshotted and fed into a KMeans model for clustering and identification of commonalities across layouts. These commonalities identified by the algorithm were then analyzed manually, and several layout variants were created to represent the few most common layouts. These layout variants would be shown at random (in A/B variant style) to participants. In the experimental facet of the study, user interaction with the layout was measured through various UX metrics, recorded sessions, analytics, and heatmaps.
 
+A one way anova test for analysis of variance was used. It was found that not be to statistically significant at p < .10.
+
 
 ## Results
 
 This paper proposes a potential approach to identifying common layouts in a given domain (e.g., ecommerce, business, healthcare, media) and optimization/analysis of the effectiveness of layouts.
+
+explain how the selection of already computer and interface savvy users may have resulted in figures that were less representative of the actual market
 
 
 Ideas for data analysis:
 - Scatter plots of variants and session times (variant by color, Y axis is session length)
 - correlation between session time and variant; abstract the reasoning out for whyu this could be (i.e., one variant has clearly presented information CTA over another)
 
+
+Stage 0 site count:
+1002
+Stage 1 site count:
+975
+Stage 2 site count:
+908
+
+Cluster counts:
+0 : 242 | 5 subclusters
+1 : 125 | 3 subcl.
+2 : 111 | 3 subcl.
+3 : 385 | 8 subcl.
 
 Implications:
 
@@ -119,6 +135,38 @@ Directions for research:
 18
 17
 
+
+Minimum	min =	2
+Maximum	max =	80
+Range	range =	78
+Size	n =	21
+Sum	sum =	490
+Mean	x¯¯¯ =	23.3333333333
+Median	x˜ =	17
+Mode	mode =	5
+Standard Deviation	s =	22.621523674
+Variance	s2 =	511.733333333
+Mid Range	MR =	41
+Quartiles		Quartiles:
+Q1 --> 5
+Q2 --> 17
+Q3 --> 32.5
+Interquartile Range	IQR =	27.5
+Outliers Possible		80
+Sum of Squares	SS =	10234.6666667
+Mean Absolute
+Deviation	MAD =	17.619047619
+Root Mean Square	RMS =	32.1217920392
+Std Error of Mean	SE =	4.93642117006
+Skewness	γ1 =	1.20239126736
+Kurtosis	β2 =	4.09134844901
+Kurtosis Excess
+(Kurtosis in Excel)	α4 =	0.582576519188
+Coefficient of
+Variation	CV =	0.969493871743
+Relative Standard
+Deviation	RSD =	96.9493871743%
+
 hwVB0eKUehxy:
 12
 45
@@ -143,6 +191,37 @@ hwVB0eKUehxy:
 38
 33
 
+Minimum	min =	3
+Maximum	max =	107
+Range	range =	104
+Size	n =	22
+Sum	sum =	518
+Mean	x¯¯¯ =	23.5454545455
+Median	x˜ =	17.5
+Mode	mode =	12, 3, 9
+Standard Deviation	s =	22.6226335731
+Variance	s2 =	511.783549784
+Mid Range	MR =	55
+Quartiles		Quartiles:
+Q1 --> 9
+Q2 --> 17.5
+Q3 --> 33
+Interquartile Range	IQR =	24
+Outliers Possible		107
+Sum of Squares	SS =	10747.4545455
+Mean Absolute
+Deviation	MAD =	15.2396694215
+Root Mean Square	RMS =	32.2941030361
+Std Error of Mean	SE =	4.82316168364
+Skewness	γ1 =	2.54887286486
+Kurtosis	β2 =	12.0171452278
+Kurtosis Excess
+(Kurtosis in Excel)	α4 =	8.53556628044
+Coefficient of
+Variation	CV =	0.960806831291
+Relative Standard
+Deviation	RSD =	96.0806831291%
+
 vtc5qYP2r8Ut:
 40
 37
@@ -158,6 +237,37 @@ vtc5qYP2r8Ut:
 12
 24
 4
+
+Minimum	min =	3
+Maximum	max =	54
+Range	range =	51
+Size	n =	14
+Sum	sum =	366
+Mean	x¯¯¯ =	26.1428571429
+Median	x˜ =	30.5
+Mode	mode =	37
+Standard Deviation	s =	17.2709500111
+Variance	s2 =	298.285714286
+Mid Range	MR =	28.5
+Quartiles		Quartiles:
+Q1 --> 10
+Q2 --> 30.5
+Q3 --> 38
+Interquartile Range	IQR =	28
+Outliers Possible		none
+Sum of Squares	SS =	3877.71428571
+Mean Absolute
+Deviation	MAD =	15.2857142857
+Root Mean Square	RMS =	30.9907820396
+Std Error of Mean	SE =	4.61585554897
+Skewness	γ1 =	-0.00654859755595
+Kurtosis	β2 =	2.33351678543
+Kurtosis Excess
+(Kurtosis in Excel)	α4 =	-1.50739230547
+Coefficient of
+Variation	CV =	0.660637432118
+Relative Standard
+Deviation	RSD =	66.0637432118%
 
 + exp. anova
 + 2nd parsed_res data
@@ -190,6 +300,7 @@ The f-ratio value is 0.08421. The p-value is .919361. The result is not sign
 potential avenues:
 working heatmaps
 feature density / topographic images / contour maps
+develop some quantitative metric for determing success/effectiveness of a layout 
 
 tables:
 number of initial sites, then parsed, then cluster_data
