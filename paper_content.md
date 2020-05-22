@@ -143,6 +143,12 @@ vtc5qYP2r8Ut:
 24
 4
 
++ exp. anova
++ 2nd parsed_res data
++ initial # -> parsed/clean # -> duped (domains) # -> cluster count -> subcluster count
+
+Show example of subcluster layering process
+Show media example (leave built variants in appendix?)
 
 ONE-WAY ANOVA VARIANCE CALCULATIONS:
 F-statistic value = 0.08421
