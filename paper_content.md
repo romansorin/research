@@ -9,12 +9,10 @@
   - [Introduction](#introduction)
   - [Method](#method)
     - [Participants](#participants)
+    - [Design](#design)
     - [Analytical Procedure](#analytical-procedure)
     - [Experimental Procedure](#experimental-procedure)
-    - [Design](#design)
   - [Results](#results)
-    - [Content analysis results](#content-analysis-results)
-    - [Experimental Results](#experimental-results)
   - [Discussion and Conclusion](#discussion-and-conclusion)
   - [Appendix](#appendix)
   - [References](#references)
@@ -48,16 +46,14 @@ In data sets which contain a large number of samples, such as a set of the highe
 
 ## Method
 
-A paired analytical/experimental approach was chosen to get data and find the layouts that were going to be used. This data that was collected was then processed and had a KMeans algorithm applied to it, resulting in clusters that could be isolated to identify commonalities. 
-
-
-Heatmaps were installed but due to technical errors did not record behavior. This is a common avenue of identifying/tracking behavior (cite something here)
-
-
 ### Participants
 
 The study involved 57 individuals who voluntarily participated in the experimental portion of layout analysis. Individuals were age 18 and older, with all participants being from the United States. All participants were expected to have familiarity and experience with navigating layouts and websites, and several individuals had several years of work experience in software engineering and computer science. No compensation or reimbursement was provided for voluntary involvement in the study. All participants successfully completed the experiment. Participants were recruited through direct and indirect advertisement/sharing of the study. Participation was limited to devices with a minimum screen width of 1024px (large breakpoint), as only desktop-based layout interfaces were presented. After the experiment, participants were thanked and then provided with an email for further inquiries.
 
+
+### Design
+
+A paired analytical and experimental approach was taken to identify common layouts and their potential association to user behavior. The analytical procedure utilized scripts and applications [repository] built specifically for this study to query various APIs, collect visual screenshot site data, and manipulate/process screenshots for use in KMeans clustering and image overlaying. These KMeans clusters were then assessed and analyzed to identify potential commonalities in layouts. Experimentally, a site dedicated to the experiment was built [mysite] to track user interaction with presented interfaces. In order to track user behavior, different analytics tools to identify demographics (location, estimated age), heatmaps and recordings were installed on the site (Google Analytics [ga] and Hotjar [hotjar], respectively). As the participant worked through the experiment, the timestamps of their session start and session end were collected and set in a document collection provided by Google Firebase's Cloud Firestore [firestore].
 
 ### Analytical Procedure
 
@@ -68,12 +64,6 @@ Subdomain and root domain were split with a hyphen delimiter. Subdomain and TLD 
 ### Experimental Procedure
 
 The experiment was conducted on a website [cite my site] built to host the experiment and information related to the experiment. Upon viewing on the homepage, users were presented with a message describing the entire study in brief, directions for participation, and information on what data is collected and how it will be used. Consent was provided as users had to manually input their email and press "begin". Upon pressing begin, the participant was randomly assigned to one of three aforementioned layout variants, and they could not assign themselves to another interface. Participants were instructed to navigate and read through the information and structure of the interface as they typically would with a real-world product, and then attempt to register or purchase the presented product or service. After they pressed the relevant buttons/links to begin registration, they were then redirected to the final screen confirming that their participation in the experiment was finished.
-
-### Design
-
-The study included both a quantitative and qualitative analysis of user behavior and layouts, respectively. In the first stage of the study (content analysis), queries to the Alexa API were saved, parsed, and sites were extracted from the responses. These sites were then screenshotted and fed into a KMeans model for clustering and identification of commonalities across layouts. These commonalities identified by the algorithm were then analyzed manually, and several layout variants were created to represent the few most common layouts. These layout variants would be shown at random (in A/B variant style) to participants. In the experimental facet of the study, user interaction with the layout was measured through various UX metrics, recorded sessions, analytics, and heatmaps.
-
-
 
 ## Results
 
@@ -194,20 +184,6 @@ Q1 --> 9
 Q2 --> 17.5
 Q3 --> 33
 Interquartile Range	IQR =	24
-Outliers Possible		107
-Sum of Squares	SS =	10747.4545455
-Mean Absolute
-Deviation	MAD =	15.2396694215
-Root Mean Square	RMS =	32.2941030361
-Std Error of Mean	SE =	4.82316168364
-Skewness	γ1 =	2.54887286486
-Kurtosis	β2 =	12.0171452278
-Kurtosis Excess
-(Kurtosis in Excel)	α4 =	8.53556628044
-Coefficient of
-Variation	CV =	0.960806831291
-Relative Standard
-Deviation	RSD =	96.0806831291%
 
 vtc5qYP2r8Ut:
 40
@@ -241,20 +217,6 @@ Q1 --> 10
 Q2 --> 30.5
 Q3 --> 38
 Interquartile Range	IQR =	28
-Outliers Possible		none
-Sum of Squares	SS =	3877.71428571
-Mean Absolute
-Deviation	MAD =	15.2857142857
-Root Mean Square	RMS =	30.9907820396
-Std Error of Mean	SE =	4.61585554897
-Skewness	γ1 =	-0.00654859755595
-Kurtosis	β2 =	2.33351678543
-Kurtosis Excess
-(Kurtosis in Excel)	α4 =	-1.50739230547
-Coefficient of
-Variation	CV =	0.660637432118
-Relative Standard
-Deviation	RSD =	66.0637432118%
 
 + exp. anova
 + 2nd parsed_res data
@@ -283,6 +245,8 @@ Within-treatments	24859.8355	54	460.3673
 Total	24937.3684	56		
 The f-ratio value is 0.08421. The p-value is .919361. The result is not significant at p < .10.
 
+Heatmaps were installed but due to technical errors did not record behavior. This is a common avenue of identifying/tracking behavior (cite something here)
+
 
 potential avenues:
 working heatmaps
@@ -295,9 +259,6 @@ results (anova)
 clusters
 
 
-### Content analysis results
-
-### Experimental Results
 
 ## Discussion and Conclusion
 
