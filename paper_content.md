@@ -72,7 +72,6 @@ The study included both a quantitative and qualitative analysis of user behavior
 Ideas for data analysis:
 - Scatter plots of variants and session times (variant by color, Y axis is session length)
 - correlation between session time and variant; abstract the reasoning out for whyu this could be (i.e., one variant has clearly presented information CTA over another)
-- regression analysis
 
 
 Implications:
@@ -80,6 +79,91 @@ Implications:
 Limitations:
 
 Directions for research:
+
+8nqXhdl3JD8u:
+7
+5
+3
+60
+59
+24
+5
+55
+30
+24
+80
+5
+3
+2
+35
+28
+15
+9
+6
+18
+17
+
+hwVB0eKUehxy:
+12
+45
+3
+5
+9
+3
+19
+22
+11
+107
+15
+35
+18
+29
+43
+9
+7
+12
+26
+17
+38
+33
+
+vtc5qYP2r8Ut:
+40
+37
+6
+38
+3
+37
+47
+54
+37
+10
+17
+12
+24
+4
+
+
+ONE-WAY ANOVA VARIANCE CALCULATIONS:
+F-statistic value = 0.08421
+P-value = 0.91936
+
+Summary of Data						
+	Treatments					
+	1	2	3	4	5	Total
+N	21	22	14			57
+∑X	490	518	366			1374
+Mean	23.3333	23.5455	26.1429			24.105
+∑X2	21668	22944	13446			58058
+Std.Dev.	22.6215	22.6226	17.271			21.1024
+
+Result Details				
+Source	SS	df	MS	
+Between-treatments	77.5329	2	38.7665	F = 0.08421
+Within-treatments	24859.8355	54	460.3673	
+Total	24937.3684	56		
+The f-ratio value is 0.08421. The p-value is .919361. The result is not significant at p < .10.
+
 
 
 ### Content analysis results
