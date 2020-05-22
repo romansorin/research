@@ -56,11 +56,24 @@ Heatmaps were installed but due to technical errors did not record behavior. Thi
 
 ### Participants
 
+The study involved 57 individuals who voluntarily participated in the experimental portion of layout analysis. Individuals were age 18 and older, with all participants being from the United States. All participants were expected to have familiarity and experience with navigating layouts and websites, and several individuals had several years of work experience in software engineering and computer science. No compensation or reimbursement was provided for voluntary involvement in the study. All participants successfully completed the experiment. Participants were recruited through direct and indirect advertisement/sharing of the study. Participation was limited to devices with a minimum screen width of 1024px (large breakpoint), as only desktop-based layout interfaces were presented. 
+
+--- no >>
 Approximately fifty to one hundred individuals age 18+ participated in the experimental portion of this study. Approximately 5000 sites were collected from the Amazon Web Services Alexa API and used in feature extraction/KMeans algorithm (clustering).
 
 ### Procedure
 
+Analysis began by querying the AWS Alexa Top Sites API for an initial 1002 sites. The Top Sites API provides the highest ranking sites by region, and the region chosen was "global" for this experiment. After 1002 sites were returned, the responses had to be parsed and cleaned up to identify if there were any sites that were no longer active (i.e., a 500 error) or could not be connected to. Each of the sites were queried for status, and if they existed, an RGB screenshot of the home page (root URL) was taken. Due to lazy loading, infinite scroll, and asynchronous calls, screenshot height was limited to 30000 pixels. The driver then scrolled from each max scroll height every five seconds up until the screenshot maximium height, which upon reaching max height the driver jumped to the 0th pixel and rescrolled in increments of 200 pixels every 0.5 seconds and took a full page screenshot. This secondary scroll pass ensured that content would have loaded by the time the screenshot was taken. Pages that were not active were ignored by the driver, and the function moved to the next site. After all RGB screenshots were taken, a secondary image processing step was taken: conversion of all RGB sites to greyscale to eliminate the influence of color on clustering and image similarity. Many sites were found to have a presence of subdomains or TLDs due to regional or content differences, however these could not be automatically eliminated due to the fact that different subdomains could serve different purposes — a subdomain may map to a dashboard, another may handle support channels, etc. Instead, sites with the same root domain (ignoring both the subdomain and TLDs) were compared using an image similarity API provided by OpenAI. The greyscale versions of these same root domains but differing subdomains or TLDs were compared to each other; if the site similarity surpassed the arbitrary threshold of fifteen, the higher ranking site/screenshot was kept, and the comparison image was removed from the dataset. However, before image comparisons were done, every greyscale screenshot, regardless of comparison, or unique domains, was cropped to some found height. Filtered domains were sorted using insertion sort to identify base domain and duplicates. Width of the site remained constant due to all screenshots being taken on a single device (width of 2560px), though heights were dependent on the site. Screenshots were iterated over and a flag variable was created to identify the shortest/smallest height dimension to be used for cropping. In order to circumvent any technical glitches, a minimum height of 1440px was set using the opencv cv2 image manipulation lib. Images below this minimum height were removed. After ensuring that all screenshots can be considered "unique" content, these images were then fed into a Keras vgg16 K-Means clustering algorithm with k=4 clusters selected. Due to some clusters containing several hundred images, an image overlaying function was run inside of each cluster to generate subclusters of maximum 50 images each. Subclusters were displayed as a PNG, where the denser parts of the image (greyscale, overlayed weighted 50/50) represented the commonalities of objects/features in layouts. These features were then manually extracted and represented in a mockup. After each cluster's subclusters had mockups generated, mockups were analyzed and some features were detracted from the mockup due to overlapping features/clarity of the layout. After mockups From four clusters, three common layouts could be realistically created and identified, and mockups were then converted into web components with TailwindUI provided components. Each layout was then built out into a web app and a random string identifier was created for each variant. Session length was collected and inserted into Firebase Cloud Store.
+
+Subdomain and root domain were split with a hyphen delimiter. Subdomain and TLD were analyzed separately.
+
+Two separate procedures were used for content analysis and experimentation. Experimentally, participants were randomly assigned one of three variants, and participants could not assign themselves another interface. Participants were instructed to navigate the presented interface as they typically would, with the intention to reach registration or purchase of the presented product/service.
+
+
 The current research was done through analysis of Alexa API responses and experimental application of the KMeans clustering. The intended participants included software engineers, data scientists, and UI/UX researchers. By using industry professionals as participants, I aimed to reduce friction that may occur due to inexperience of navigation and task completion, further skewing any results without significant real-world application. These participants are assumed to have experience navigating around interfaces and understanding how to complete the task asked of them. All participants interacted with the layouts through the site built to host this research (https://research.romansorin.com), and tracking/identification by cookies was implemented. Participant emails were also collected at the beginning of the experiment. Cookies contained the id of a randomly chosen variant layout and the individual's user ID assigned on initial project sign-up. Participants were asked to complete a task, which was reaching registration/purchase endpoint, as quickly as possible by navigating through their presented layout.
+
+
+Analysis: One way anova test was ran on the session lengths for each variant. 
 
 ### Design
 
@@ -68,6 +81,9 @@ The study included both a quantitative and qualitative analysis of user behavior
 
 
 ## Results
+
+This paper proposes a potential approach to identifying common layouts in a given domain (e.g., ecommerce, business, healthcare, media) and optimization/analysis of the effectiveness of layouts.
+
 
 Ideas for data analysis:
 - Scatter plots of variants and session times (variant by color, Y axis is session length)
@@ -170,6 +186,15 @@ Within-treatments	24859.8355	54	460.3673
 Total	24937.3684	56		
 The f-ratio value is 0.08421. The p-value is .919361. The result is not significant at p < .10.
 
+
+potential avenues:
+working heatmaps
+feature density / topographic images / contour maps
+
+tables:
+number of initial sites, then parsed, then cluster_data
+results (anova)
+clusters
 
 
 ### Content analysis results
