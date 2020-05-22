@@ -7,7 +7,7 @@
     - [Email: roman@romansorin.com](#email-romanromansorincom)
     - [Affiliation: Mentor High School](#affiliation-mentor-high-school)
   - [Introduction](#introduction)
-  - [Methods](#methods)
+  - [Method](#method)
     - [Participants](#participants)
     - [Analytical Procedure](#analytical-procedure)
     - [Experimental Procedure](#experimental-procedure)
@@ -46,11 +46,10 @@ While the fields of software engineering and machine learning have been individu
 
 In data sets which contain a large number of samples, such as a set of the highest indexed sites on the web (minimum 10,000+ indices), manual identification of both common and more intricate patterns are incredibly difficult to find and waste resources. In contrast, statistical methods and the use of trained algorithmic models will have higher rates of success in identifying patterns that may otherwise not be seen. Thus, there is a chance that integrating algorithmic models into site analysis to identify patterns may more significantly benefit the field of software engineering. Because of the aforementioned limitations of manual analysis, layouts and structures which are deemed to be efficient and successful are strictly subjective and reported on an "at-will" basis; this information may come from individual analyses or findings by user experience researchers within case studies or companies. Thus, this paper proposes an approach to find objective data through the collection of existing sites from Alexa Top Sites [1], then programmatically collect screenshots of every site, which will then be fed into a model to identify patterns in layouts. By itself, these data will be of little value to the purpose of this paper and therefore requires implementation and an experimental investigation to identify what metrics are associated in practice rather than strict ranking. Thus, this paper seeks to identify the most common layout hierarchies and patterns seen in the highest-indexing sites and measure which UX metrics can be best associated with a given layout or features.
 
-## Methods
+## Method
 
- A two-fold approach was selected to gather data regarding layouts. The first approach was an analysis of {NUMBER} sites that were pulled from the Amazon Alexa API for Top Sites. These sites were then parsed and filtered to identify possible network connectivity issues and dead sites. The remaining sites were then screenshotted, and sites that had the same domain but different subdomains were compared using an image similarity algorithm provided by an API, and then filtered out if they were within a threshold of {THRESHOLD}. The remaining sites were then fed into a KMeans algorithm which created four clusters. Within each cluster, KMeans was ran again to find {NUMBER} subclusters to make identification of patterns/layout density easier. Images within each subcluster were then overlayed and each subcluster was manually analyzed to identify common components/layouts. These components were then merged together and re-analyzed for error/logical layout. In the end, THREE variants were identified by density and object placement, and comparitive template layouts were created for the experimental portion of the experiment.
+A paired analytical/experimental approach was chosen to get data and find the layouts that were going to be used. This data that was collected was then processed and had a KMeans algorithm applied to it, resulting in clusters that could be isolated to identify commonalities. 
 
-The experimental portion of study consisted of randomly assigning the participant to one of three variants built out from the identified layouts. Participants were instructed to navigate throughout the layout and figure out how to "sign up" or "get started" with the presented product. When beginning the experiment, a document ID was assigned and their session start was recorded. They were redirected to the assigned variant and navigated; when they finished, the time they ended was recorded in the document. The session length was then calculated for data analysis.
 
 Heatmaps were installed but due to technical errors did not record behavior. This is a common avenue of identifying/tracking behavior (cite something here)
 
@@ -70,18 +69,20 @@ Subdomain and root domain were split with a hyphen delimiter. Subdomain and TLD 
 
 The experiment was conducted on a website [cite my site] built to host the experiment and information related to the experiment. Upon viewing on the homepage, users were presented with a message describing the entire study in brief, directions for participation, and information on what data is collected and how it will be used. Consent was provided as users had to manually input their email and press "begin". Upon pressing begin, the participant was randomly assigned to one of three aforementioned layout variants, and they could not assign themselves to another interface. Participants were instructed to navigate and read through the information and structure of the interface as they typically would with a real-world product, and then attempt to register or purchase the presented product or service. After they pressed the relevant buttons/links to begin registration, they were then redirected to the final screen confirming that their participation in the experiment was finished.
 
-
-
-Analysis: One way anova test was ran on the session lengths for each variant. 
-
 ### Design
 
 The study included both a quantitative and qualitative analysis of user behavior and layouts, respectively. In the first stage of the study (content analysis), queries to the Alexa API were saved, parsed, and sites were extracted from the responses. These sites were then screenshotted and fed into a KMeans model for clustering and identification of commonalities across layouts. These commonalities identified by the algorithm were then analyzed manually, and several layout variants were created to represent the few most common layouts. These layout variants would be shown at random (in A/B variant style) to participants. In the experimental facet of the study, user interaction with the layout was measured through various UX metrics, recorded sessions, analytics, and heatmaps.
 
-A one way anova test for analysis of variance was used. It was found that not be to statistically significant at p < .10.
 
 
 ## Results
+
+
+A one way anova test for analysis of variance on the session lengths was used. It was found that not be to statistically significant at p < .10.
+
+- kmeans may have not been the best approach
+- possibly use feature / object detection/extraction for future studies
+
 
 This paper proposes a potential approach to identifying common layouts in a given domain (e.g., ecommerce, business, healthcare, media) and optimization/analysis of the effectiveness of layouts.
 
@@ -152,20 +153,6 @@ Q1 --> 5
 Q2 --> 17
 Q3 --> 32.5
 Interquartile Range	IQR =	27.5
-Outliers Possible		80
-Sum of Squares	SS =	10234.6666667
-Mean Absolute
-Deviation	MAD =	17.619047619
-Root Mean Square	RMS =	32.1217920392
-Std Error of Mean	SE =	4.93642117006
-Skewness	γ1 =	1.20239126736
-Kurtosis	β2 =	4.09134844901
-Kurtosis Excess
-(Kurtosis in Excel)	α4 =	0.582576519188
-Coefficient of
-Variation	CV =	0.969493871743
-Relative Standard
-Deviation	RSD =	96.9493871743%
 
 hwVB0eKUehxy:
 12
@@ -451,6 +438,8 @@ volume = {122},
 journal = {International Journal of Human-Computer Studies},
 doi = {10.1016/j.ijhcs.2018.09.012}
 }
+
+Peer Assessment of Webpage Design: Behavioral Sequential Analysis Based on Eye Tracking Evidence 
 
 
 [11-bibtex]@article{10.1145/2688203,
