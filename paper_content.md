@@ -5,7 +5,6 @@
     - [Title: Identification and Measurement of Hierarchical Layout Patterns on User Experience](#title-identification-and-measurement-of-hierarchical-layout-patterns-on-user-experience)
     - [Author: Roman Sorin](#author-roman-sorin)
     - [Email: roman@romansorin.com](#email-romanromansorincom)
-    - [Affiliation: Mentor High School](#affiliation-mentor-high-school)
   - [Introduction](#introduction)
   - [Method](#method)
     - [Participants](#participants)
@@ -25,7 +24,6 @@
 
 ### Email: roman@romansorin.com
 
-### Affiliation: Mentor High School
 
 ## Introduction
 
