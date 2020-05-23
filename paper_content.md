@@ -11,7 +11,9 @@
     - [Design](#design)
     - [Analytical Procedure](#analytical-procedure)
     - [Experimental Procedure](#experimental-procedure)
-  - [Results](#results)
+  - [Results and analysis](#results-and-analysis)
+    - [Results of clustering](#results-of-clustering)
+    - [Results of experiment](#results-of-experiment)
   - [Discussion and Conclusion](#discussion-and-conclusion)
   - [Appendix](#appendix)
   - [References](#references)
@@ -63,25 +65,15 @@ Subdomain and root domain were split with a hyphen delimiter. Subdomain and TLD 
 
 The experiment was conducted on a website [cite my site] built to host the experiment and information related to the experiment. Upon viewing on the homepage, users were presented with a message describing the entire study in brief, directions for participation, and information on what data is collected and how it will be used. Consent was provided as users had to manually input their email and press "begin". Upon pressing begin, the participant was randomly assigned to one of three aforementioned layout variants, and they could not assign themselves to another interface. Participants were instructed to navigate and read through the information and structure of the interface as they typically would with a real-world product, and then attempt to register or purchase the presented product or service. After they pressed the relevant buttons/links to begin registration, they were then redirected to the final screen confirming that their participation in the experiment was finished.
 
-## Results
+## Results and analysis
 
+This section presents the results of the both portions of the study, including the numbers of sites throughout processing stages, number of K clusters and N sites within each cluster, and the observed behaviors of users based on session lengths. Overall, it was shown that there was little variance of the session lengths of all three layouts as they compare to each other, and that layout did not affect a user's ability to complete the task as it relates to time.
 
-A one way anova test for analysis of variance on the session lengths was used. It was found that not be to statistically significant at p < .10.
+### Results of clustering
 
-- kmeans may have not been the best approach
-- possibly use feature / object detection/extraction for future studies
+Table shows the number N sites used in the analytical portion of the experiment as it relates to each stage. Stages include initial API data collection (0), removal of dead/inactive sites (1), and cropped/filtered sites based on domains and size (2). The analysis originally began with 1002 sites, then {975}, and finally 908 sites were used for clustering.
 
-
-This paper proposes a potential approach to identifying common layouts in a given domain (e.g., ecommerce, business, healthcare, media) and optimization/analysis of the effectiveness of layouts.
-
-explain how the selection of already computer and interface savvy users may have resulted in figures that were less representative of the actual market
-
-
-Ideas for data analysis:
-- Scatter plots of variants and session times (variant by color, Y axis is session length)
-- correlation between session time and variant; abstract the reasoning out for whyu this could be (i.e., one variant has clearly presented information CTA over another)
-
-
+count of sites from stage to stage
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[]
@@ -93,21 +85,9 @@ Stage & n    \\
 \end{tabular}
 \end{table}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-\begin{table}[]
-\begin{tabular}{@{}llll@{}}
-       & V(0)  & V(1)  & V(2)  \\
-n      & 21    & 22    & 14    \\
-Mean   & 23.33 & 23.55 & 26.14 \\
-Min    & 2     & 3     & 3     \\
-Max    & 80    & 107   & 54    \\
-SD     & 22.62 & 22.62 & 17.27 \\
-Median & 17    & 17.5  & 30.5 
-\end{tabular}
-\end{table}
+Unlike other forms of data, images could not be intuiively analyzed to determine the optimal number of clusters/centroids with a cluster, and thus an arbitrary cluster count of 4 was chosen for simplicity. Tables shows the number of sites/screenshots in each cluster after running the K-means algorithm. In order to ease manual analysis of cluster results, every 50 sites within a cluster were essentially subclustered and overlayed on top of eachother. Images were blended using the cv2.addWeighted() function and a weight of 0.5 was selected for both the base and input image; formula dst = \alpha f_{0}(x) + \beta f_{1}(x) + \gamma applied. Table also shows number of subclusters per cluster. Image shows an example subcluster from a selected cluster to illustrate weighted output and how it improves clarity.
 
-
+count of sites per cluster
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[]
@@ -120,7 +100,46 @@ Cluster & n   & Subclusters \\
 \end{tabular}
 \end{table}
 
+After manual analysis of all subclusters, common features were extracted based on image/pixel density (i.e., the darker portions of an image or where objects clearly are overlapping). Four clusters were then reduced to three common layouts to be implemented experimentally.
 
+### Results of experiment
+
+Generally, the variance of the three layouts compared to each other was found to be statistically insignificant from the data. The f-ratio value is 0.08421. The p-value is .919361. The result is not significant at p < .10. From 57 samples. Table shows each variant as a treatment and the resulting summary from one-way anova, and sources.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\begin{tabular}{@{}lllll@{}}
+                      & \multicolumn{3}{l}{Treatments} &       \\
+                      & 1        & 2        & 3        & Total \\
+N                     & 21       & 22       & 14       & 57    \\
+∑X                    & 490      & 518      & 366      & 1374  \\
+Mean                  & 23.33    & 23.55    & 26.14    & 24.11 \\
+∑X\textasciicircum{}2 & 21668    & 22944    & 13446    & 58058 \\
+SD                    & 22.62    & 22.62    & 17.27    & 21.10
+\end{tabular}
+\end{table}
+
+	
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\begin{tabular}{@{}lllll@{}}
+Source             & SS       & df & MS     &             \\
+Between-treatments & 77.53    & 2  & 38.77  & F = 0.08421 \\
+Within-treatments  & 24859.84 & 54 & 460.37 &             \\
+Total              & 24937.37 & 56 &        &            
+\end{tabular}
+\end{table}
+
+
+
+
+Table shows a total N of 57 data points split across three variants and the values as time in seconds. 
+
+
+each variants 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[]
@@ -152,43 +171,33 @@ Variant & 0       & 1        & 2      \\
 \end{tabular}
 \end{table}
 
-ONE-WAY ANOVA VARIANCE CALCULATIONS:
-F-statistic value = 0.08421
-P-value = 0.91936
-	
-The f-ratio value is 0.08421. The p-value is .919361. The result is not significant at p < .10.
 
+Table shows individual descriptive statistics for each variant to get an idea of how stats values compare across each variant.
+
+
+Individual descriptive stats for each variant
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[]
-\begin{tabular}{@{}lllll@{}}
-Source             & SS       & df & MS     &             \\
-Between-treatments & 77.53    & 2  & 38.77  & F = 0.08421 \\
-Within-treatments  & 24859.84 & 54 & 460.37 &             \\
-Total              & 24937.37 & 56 &        &            
+\begin{tabular}{@{}llll@{}}
+       & V(0)  & V(1)  & V(2)  \\
+n      & 21    & 22    & 14    \\
+Mean   & 23.33 & 23.55 & 26.14 \\
+Min    & 2     & 3     & 3     \\
+Max    & 80    & 107   & 54    \\
+SD     & 22.62 & 22.62 & 17.27 \\
+Median & 17    & 17.5  & 30.5 
 \end{tabular}
 \end{table}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-\begin{table}[]
-\begin{tabular}{@{}lllll@{}}
-                      & \multicolumn{3}{l}{Treatments} &       \\
-                      & 1        & 2        & 3        & Total \\
-N                     & 21       & 22       & 14       & 57    \\
-∑X                    & 490      & 518      & 366      & 1374  \\
-Mean                  & 23.33    & 23.55    & 26.14    & 24.11 \\
-∑X\textasciicircum{}2 & 21668    & 22944    & 13446    & 58058 \\
-SD                    & 22.62    & 22.62    & 17.27    & 21.10
-\end{tabular}
-\end{table}
 
+
+
+## Discussion and Conclusion
 
 Implications:
 
 Limitations:
-
-Directions for research:
 
 variant 0 = 8nqXhdl3JD8u
 
@@ -199,20 +208,21 @@ variant 2 = vtc5qYP2r8Ut
 
 Heatmaps were installed but due to technical errors did not record behavior. This is a common avenue of identifying/tracking behavior (cite something here)
 
+A one way anova test for analysis of variance on the session lengths was used. It was found that not be to statistically significant at p < .10.
+
+- kmeans may have not been the best approach
+- possibly use feature / object detection/extraction for future studies
+
 
 potential avenues:
 working heatmaps
 feature density / topographic images / contour maps
 develop some quantitative metric for determing success/effectiveness of a layout 
 
-tables:
-number of initial sites, then parsed, then cluster_data
-results (anova)
-clusters
 
+This paper proposes a potential approach to identifying common layouts in a given domain (e.g., ecommerce, business, healthcare, media) and optimization/analysis of the effectiveness of layouts.
 
-
-## Discussion and Conclusion
+explain how the selection of already computer and interface savvy users may have resulted in figures that were less representative of the actual market
 
 ## Appendix
 
@@ -220,8 +230,6 @@ clusters
 
 
 [1-bibtex]@misc{antoniou_2015, title={Marketplace}, url={https://aws.amazon.com/marketplace/pp/B07QK2XWNV?qid=1555346599089&sr=0-1&ref_=srh_res_product_title}, journal={Amazon}, publisher={Scb Distributors}, author={Antoniou, Laura}, year={2015}}
-
-
 
 
 [2-bibtex]@article{article,
