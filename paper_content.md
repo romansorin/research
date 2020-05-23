@@ -5,6 +5,7 @@
     - [Title: Identification and Measurement of Hierarchical Layout Patterns on User Experience](#title-identification-and-measurement-of-hierarchical-layout-patterns-on-user-experience)
     - [Author: Roman Sorin](#author-roman-sorin)
     - [Email: roman@romansorin.com](#email-romanromansorincom)
+  - [Abstract](#abstract)
   - [Introduction](#introduction)
   - [Method](#method)
     - [Participants](#participants)
@@ -38,6 +39,8 @@ NOTES:
 - REPLACE CNN WITH KMEANS AND OTHER RELEVANT INFO
 - GENERALLY CURTAIL INTRODUCTION TO BE MORE RELEVANT TO THE ACTUAL EXPERIMENT AND ANALYSIS PERFORMED
 
+
+## Abstract
 
 ## Introduction
 
@@ -104,9 +107,7 @@ Case four: <domain_name>.<tld>.<geo> - count = 2
 - Make an API call to an image similarity API provided by DeepAI [deepai] containing the two source images
 - If the threshold value is above the set maximum, remove the lower ranking site and instead keep the URL with higher ranking precedence
 
-A threshold of 15 was set through trial-and-error, and comparisons between made between greyscale images to ensure that color space was, once again, not a factor in determining unique content.
-
-After ensuring that all screenshots can be considered "unique" content, these images were then fed into a Keras vgg16 pretrained model [keras] to perform K-means clustering algorithm with k=4 clusters selected. Due to some clusters containing several hundred images, an image overlaying function was run inside of each cluster to generate subclusters of maximum 50 images each. Subclusters were displayed as a PNG, where the denser parts of the image (greyscale, overlay weighted 50/50) represented the commonalities of objects/features in layouts. These features were then manually extracted and represented in a mockup. After each cluster's subclusters had mockups generated, mockups were analyzed and some features were detracted from the mockup due to overlapping features/clarity of the layout. After mockups From four clusters, three common layouts could be realistically created and identified, and mockups were then converted into web components with TailwindUI provided components [tailwindui]. Each layout was then built out into a web app and a random string identifier was created for each variant. Session length was collected and inserted into Firebase Cloud Store [fb].
+A threshold of 15 was set through trial-and-error, and comparisons between made between greyscale images to ensure that color space was, once again, not a factor in determining unique content. After ensuring that all screenshots could be considered "unique" content, these images were then fed into a Keras vgg16 pretrained model [keras] to perform K-means clustering algorithm with k = 4 clusters selected. Due to some clusters containing several hundred images, an image overlaying function was run inside of each cluster to generate subclusters of maximum 50 images each. Subclusters were displayed as a PNG, where the denser parts of the image (greyscale, overlay weighted 50/50) represented the common features in layouts. These features were then manually extracted and represented in a mockup. After each cluster had mockups generated, mockups were analyzed and some features were detracted from the mockup due to overlapping features/clarity of the layout. Three common layouts could be realistically created and identified, and mockups were then converted into web components with TailwindUI [tailwindui].
 
 ### Experimental Procedure
 
