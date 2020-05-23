@@ -11,10 +11,10 @@
     - [Design](#design)
     - [Analytical Procedure](#analytical-procedure)
     - [Experimental Procedure](#experimental-procedure)
-  - [Results and analysis](#results-and-analysis)
-    - [Results of clustering](#results-of-clustering)
-    - [Results of experiment](#results-of-experiment)
-  - [Discussion and Conclusion](#discussion-and-conclusion)
+  - [Results](#results)
+    - [Clustering](#clustering)
+    - [Implementation](#implementation)
+  - [Discussion and conclusions](#discussion-and-conclusions)
   - [Appendix](#appendix)
   - [References](#references)
 
@@ -25,6 +25,13 @@
 ### Author: Roman Sorin
 
 ### Email: roman@romansorin.com
+
+
+NOTES:
+- REMOVE THINGS ABOUT HCL
+- REMOVE THINGS ABOUT CNN
+- REPLACE CNN WITH KMEANS AND OTHER RELEVANT INFO
+- GENERALLY CURTAIL INTRODUCTION TO BE MORE RELEVANT TO THE ACTUAL EXPERIMENT AND ANALYSIS PERFORMED
 
 
 ## Introduction
@@ -57,23 +64,21 @@ A paired analytical and experimental approach was taken to identify common layou
 
 ### Analytical Procedure
 
-Analysis began by querying the AWS Alexa Top Sites API for an initial 1002 sites. The Top Sites API provides the highest ranking sites by region, and the region chosen was "global" for this experiment. After 1002 sites were returned, the responses had to be parsed and cleaned up to identify if there were any sites that were no longer active (i.e., a 500 error) or could not be connected to. Each of the sites were queried for status, and if they existed, an RGB screenshot of the home page (root URL) was taken. Due to lazy loading, infinite scroll, and asynchronous calls, screenshot height was limited to 30000 pixels. The driver then scrolled from each max scroll height every five seconds up until the screenshot maximium height, which upon reaching max height the driver jumped to the 0th pixel and rescrolled in increments of 200 pixels every 0.5 seconds and took a full page screenshot. This secondary scroll pass ensured that content would have loaded by the time the screenshot was taken. Pages that were not active were ignored by the driver, and the function moved to the next site. After all RGB screenshots were taken, a secondary image processing step was taken: conversion of all RGB sites to greyscale to eliminate the influence of color on clustering and image similarity. Many sites were found to have a presence of subdomains or TLDs due to regional or content differences, however these could not be automatically eliminated due to the fact that different subdomains could serve different purposes — a subdomain may map to a dashboard, another may handle support channels, etc. Instead, sites with the same root domain (ignoring both the subdomain and TLDs) were compared using an image similarity API provided by OpenAI. The greyscale versions of these same root domains but differing subdomains or TLDs were compared to each other; if the site similarity surpassed the arbitrary threshold of fifteen, the higher ranking site/screenshot was kept, and the comparison image was removed from the dataset. However, before image comparisons were done, every greyscale screenshot, regardless of comparison, or unique domains, was cropped to some found height. Filtered domains were sorted using insertion sort to identify base domain and duplicates. Width of the site remained constant due to all screenshots being taken on a single device (width of 2560px), though heights were dependent on the site. Screenshots were iterated over and a flag variable was created to identify the shortest/smallest height dimension to be used for cropping. In order to circumvent any technical glitches, a minimum height of 1440px was set using the opencv cv2 image manipulation lib. Images below this minimum height were removed. After ensuring that all screenshots can be considered "unique" content, these images were then fed into a Keras vgg16 K-Means clustering algorithm with k=4 clusters selected. Due to some clusters containing several hundred images, an image overlaying function was run inside of each cluster to generate subclusters of maximum 50 images each. Subclusters were displayed as a PNG, where the denser parts of the image (greyscale, overlayed weighted 50/50) represented the commonalities of objects/features in layouts. These features were then manually extracted and represented in a mockup. After each cluster's subclusters had mockups generated, mockups were analyzed and some features were detracted from the mockup due to overlapping features/clarity of the layout. After mockups From four clusters, three common layouts could be realistically created and identified, and mockups were then converted into web components with TailwindUI provided components. Each layout was then built out into a web app and a random string identifier was created for each variant. Session length was collected and inserted into Firebase Cloud Store.
+Analysis began by querying the AWS Alexa Top Sites API for an initial 1002 sites. The Top Sites API provides the highest ranking sites by region, and the region chosen was "global" for this experiment. After 1002 sites were returned, the responses had to be parsed and cleaned up to identify if there were any sites that were no longer active (i.e., a 500 error) or could not be connected to. Each of the sites were queried for status, and if they existed, an RGB screenshot of the home page (root URL) was taken. Due to lazy loading, infinite scroll, and asynchronous calls, screenshot height was limited to 30000 pixels. The driver then scrolled from each max scroll height every five seconds up until the screenshot maximium height, which upon reaching max height the driver jumped to the 0th pixel and rescrolled in increments of 200 pixels every 0.5 seconds and took a full page screenshot. This secondary scroll pass ensured that content would have loaded by the time the screenshot was taken. Pages that were not active were ignored by the driver, and the function moved to the next site. After all RGB screenshots were taken, a secondary image processing step was taken: conversion of all RGB sites to greyscale to eliminate the influence of color on clustering and image similarity. Many sites were found to have a presence of subdomains or TLDs due to regional or content differences, however these could not be automatically eliminated due to the fact that different subdomains could serve different purposes — a subdomain may map to a dashboard, another may handle support channels, etc. Instead, sites with the same root domain (ignoring both the subdomain and TLDs) were compared using an image similarity API provided by OpenAI. The greyscale versions of these same root domains but differing subdomains or TLDs were compared to each other; if the site similarity surpassed the arbitrary threshold of fifteen, the higher ranking site/screenshot was kept, and the comparison image was removed from the dataset. However, before image comparisons were done, every greyscale screenshot, regardless of comparison, or unique domains, was cropped to some found height. Filtered domains were sorted using insertion sort to identify base domain and duplicates. Width of the site remained constant due to all screenshots being taken on a single device (width of 2560px), though heights were dependent on the site. Screenshots were iterated over and a flag variable was created to identify the shortest/smallest height dimension to be used for cropping. In order to circumvent any technical glitches, a minimum height of 1440px was set using the opencv cv2 image manipulation lib. Images below this minimum height were removed. After ensuring that all screenshots can be considered "unique" content, these images were then fed into a Keras vgg16 pretrained model to perform K-Means clustering algorithm with k=4 clusters selected. Due to some clusters containing several hundred images, an image overlaying function was run inside of each cluster to generate subclusters of maximum 50 images each. Subclusters were displayed as a PNG, where the denser parts of the image (greyscale, overlayed weighted 50/50) represented the commonalities of objects/features in layouts. These features were then manually extracted and represented in a mockup. After each cluster's subclusters had mockups generated, mockups were analyzed and some features were detracted from the mockup due to overlapping features/clarity of the layout. After mockups From four clusters, three common layouts could be realistically created and identified, and mockups were then converted into web components with TailwindUI provided components. Each layout was then built out into a web app and a random string identifier was created for each variant. Session length was collected and inserted into Firebase Cloud Store.
 Subdomain and root domain were split with a hyphen delimiter. Subdomain and TLD were analyzed separately.
-
 
 ### Experimental Procedure
 
-The experiment was conducted on a website [cite my site] built to host the experiment and information related to the experiment. Upon viewing on the homepage, users were presented with a message describing the entire study in brief, directions for participation, and information on what data is collected and how it will be used. Consent was provided as users had to manually input their email and press "begin". Upon pressing begin, the participant was randomly assigned to one of three aforementioned layout variants, and they could not assign themselves to another interface. Participants were instructed to navigate and read through the information and structure of the interface as they typically would with a real-world product, and then attempt to register or purchase the presented product or service. After they pressed the relevant buttons/links to begin registration, they were then redirected to the final screen confirming that their participation in the experiment was finished.
+The experiment was conducted on a website [research.rs] built to host the experiment and information related to the experiment. Upon viewing on the homepage, users were presented with a message describing the entire study in brief, directions for participation, and information on what data is collected and how it will be used. Consent was provided as users had to manually input their email and press "begin". Upon pressing begin, the participant was randomly assigned to one of three aforementioned layout variants, and they could not assign themselves to another interface. Participants were instructed to navigate and read through the information and structure of the interface as they typically would with a real-world product, and then attempt to register or purchase the presented product or service. After they pressed the relevant buttons/links to begin registration, they were then redirected to the final screen confirming that their participation in the experiment was finished.
 
-## Results and analysis
+## Results
 
 This section presents the results of the both portions of the study, including the numbers of sites throughout processing stages, number of K clusters and N sites within each cluster, and the observed behaviors of users based on session lengths. Overall, it was shown that there was little variance of the session lengths of all three layouts as they compare to each other, and that layout did not affect a user's ability to complete the task as it relates to time.
 
-### Results of clustering
+### Clustering
 
-Table shows the number N sites used in the analytical portion of the experiment as it relates to each stage. Stages include initial API data collection (0), removal of dead/inactive sites (1), and cropped/filtered sites based on domains and size (2). The analysis originally began with 1002 sites, then {975}, and finally 908 sites were used for clustering.
+Following collection of data from the AWS Alexa Top Sites API, the datasets were run through the image processing and filtering stages. To simulate the importance of this processing stage as is relates to use of data, Fig. 1 shows the number of sites used in the analytical portion of the experiment as it relates to each stage. In stage 0, which is initial data collection and parsing of the API, 1002 sites were returned and added to a table within the study application. Stage 1 concerns the removal of dead and inactive sites as the Selenium webdriver went through and collected screenshots of each site, and removed sites that did not have a status code within the 200 range, resulting in 975 sites being left for processing. Stage 2 concerns the comparison of same root domain sites using the image similarity API and an arbitrarily set threshold, eliminating subdomains and geographical TLDs with content that too closely resembled that of the higher ranking root domain. In addition to similarity processing, reshaping of the resulting screenshots led to those which did not exceed the minimum height of 1440px to be thrown out as well, reducing the sample size to 908 sites as screenshots. These remaining screenshots were deemed unique enough to be clustered using the K-means algorithm, and fit the minimum array length (delve into what is required/why of an image, why it has to fit some height/width), and were used in the following clustering.
 
-count of sites from stage to stage
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[]
@@ -85,9 +90,15 @@ Stage & n    \\
 \end{tabular}
 \end{table}
 
-Unlike other forms of data, images could not be intuiively analyzed to determine the optimal number of clusters/centroids with a cluster, and thus an arbitrary cluster count of 4 was chosen for simplicity. Tables shows the number of sites/screenshots in each cluster after running the K-means algorithm. In order to ease manual analysis of cluster results, every 50 sites within a cluster were essentially subclustered and overlayed on top of eachother. Images were blended using the cv2.addWeighted() function and a weight of 0.5 was selected for both the base and input image; formula dst = \alpha f_{0}(x) + \beta f_{1}(x) + \gamma applied. Table also shows number of subclusters per cluster. Image shows an example subcluster from a selected cluster to illustrate weighted output and how it improves clarity.
+<!-- TODO: WHERE TO PUT this -->
+<!-- Following the clustering of the remaining 908 images using the Keras VGG16 pretrained model for K-means algorithm -->
 
-count of sites per cluster
+Due to a lack of appropriately typed data to apply either the elbow method [some source here on what it is] or gap method [some source here on what it is] to identify the optimal number of K clusters used in K-means, an abitrary but reasonable value of 4 was selected, outputting four groups of clustered (similar) images. A K value of 4 was most reasonable for simplicity and ease of evaluation. Table 2 illustrates the number of images per cluster after running the K-means model, where cluster 0 had n = 242 images; cluster 1 had n = 125 images; cluster 2 had n = 111 images; and cluster 3 had n = 385 images. In an effort to ease the manual analysis of cluster results, such as cluster 3's n = 385, a function iterated over the cluster results and generated a weighted image for every 50 images (subclusters). Images within a subcluster were blended using the OpenCV addWeighted() function, which utilizes the following formula, where both \alpha and \beta represent the intended weight of source images f_0(x) and f_1(x), and \gamma = 0 implicitly:
+
+\[dst = \alpha f_0(x) + \beta f_1(x) + \gamma\]
+
+Table 2 also illustrates the number of subclusters per cluster, with cluster 0 having 5; cluster 1 having 3; cluster 2 having 3; and cluster 3 having 8. Figure 2 shows an example subcluster from a given cluster to better illustrate the intention and output of the weighted images, and its improvement on clarity for analysis.
+
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[]
@@ -100,46 +111,12 @@ Cluster & n   & Subclusters \\
 \end{tabular}
 \end{table}
 
-After manual analysis of all subclusters, common features were extracted based on image/pixel density (i.e., the darker portions of an image or where objects clearly are overlapping). Four clusters were then reduced to three common layouts to be implemented experimentally.
+Within subclusters, common features could be identified based on image / pixel density (i.e., the darker portions of an image or where object are clearly overlapping) to generate one common layout per cluster. Due to a lack of obvious variance between two of the four layouts created, the number of layouts were reduced from 4 to 3 to better represent differences in layout and hierarchical elements for experimental implementation. Figures 3 to 5 show the layouts that were implemented in the experimental portion of the study.
 
-### Results of experiment
+### Implementation
 
-Generally, the variance of the three layouts compared to each other was found to be statistically insignificant from the data. The f-ratio value is 0.08421. The p-value is .919361. The result is not significant at p < .10. From 57 samples. Table shows each variant as a treatment and the resulting summary from one-way anova, and sources.
+Though heatmaps and other tracking tools were installed on the experimental site, a technical error led to failure to collect that data and thus only led to session data length being collected. Table 3 shows a total of 57 data points, with session length elapsed associated with variants. Two potential outliers were identified: a value of 80 for variant 0 and a value of 107 for variant 1. These two outliers do not have clear explanations, as factors such as internet connection and someone's understanding of the task could not be assessed/tracked/considered with this implementation.
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-\begin{table}[]
-\begin{tabular}{@{}lllll@{}}
-                      & \multicolumn{3}{l}{Treatments} &       \\
-                      & 1        & 2        & 3        & Total \\
-N                     & 21       & 22       & 14       & 57    \\
-∑X                    & 490      & 518      & 366      & 1374  \\
-Mean                  & 23.33    & 23.55    & 26.14    & 24.11 \\
-∑X\textasciicircum{}2 & 21668    & 22944    & 13446    & 58058 \\
-SD                    & 22.62    & 22.62    & 17.27    & 21.10
-\end{tabular}
-\end{table}
-
-	
-
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-\begin{table}[]
-\begin{tabular}{@{}lllll@{}}
-Source             & SS       & df & MS     &             \\
-Between-treatments & 77.53    & 2  & 38.77  & F = 0.08421 \\
-Within-treatments  & 24859.84 & 54 & 460.37 &             \\
-Total              & 24937.37 & 56 &        &            
-\end{tabular}
-\end{table}
-
-
-
-
-Table shows a total N of 57 data points split across three variants and the values as time in seconds. 
-
-
-each variants 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[]
@@ -171,9 +148,7 @@ Variant & 0       & 1        & 2      \\
 \end{tabular}
 \end{table}
 
-
-Table shows individual descriptive statistics for each variant to get an idea of how stats values compare across each variant.
-
+Table 5 shows all 57 data points split across three respective variants, with values representing seconds. Descriptive statistics for each variant are shown to understand how basic values compare across each variant
 
 Individual descriptive stats for each variant
 % Please add the following required packages to your document preamble:
@@ -186,43 +161,113 @@ Mean   & 23.33 & 23.55 & 26.14 \\
 Min    & 2     & 3     & 3     \\
 Max    & 80    & 107   & 54    \\
 SD     & 22.62 & 22.62 & 17.27 \\
-Median & 17    & 17.5  & 30.5 
+Median & 17    & 17.5  & 30.5
+\end{tabular}
+\end{table}
+
+Using a one-way ANOVA statistical test, analysis of the session length associated with three variants showed that the compared interface variances generally were found to be statistically insignificant at p < .10. Table 3 shows descriptive statistics associated with each variant, while table 4 shows information relevant to the ANOVA test. The means of the three treatment groups (interfaces) were found to have a p-value of 0.919361, and an f-ratio value of 0.08421. While the means were relatively similar across treatment groups (T_1 = 23.33, T_2 = 23.55, T_3 = 26.14), the potential effect of the extreme values is unclear unless the test is reran without the outliers.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\begin{tabular}{@{}lllll@{}}
+                      & \multicolumn{3}{l}{Treatments} &       \\
+                      & 1        & 2        & 3        & Total \\
+N                     & 21       & 22       & 14       & 57    \\
+∑X                    & 490      & 518      & 366      & 1374  \\
+Mean                  & 23.33    & 23.55    & 26.14    & 24.11 \\
+∑X\textasciicircum{}2 & 21668    & 22944    & 13446    & 58058 \\
+SD                    & 22.62    & 22.62    & 17.27    & 21.10
+\end{tabular}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\begin{tabular}{@{}lllll@{}}
+Source             & SS       & df & MS     &             \\
+Between-treatments & 77.53    & 2  & 38.77  & F = 0.08421 \\
+Within-treatments  & 24859.84 & 54 & 460.37 &             \\
+Total              & 24937.37 & 56 &        &            
 \end{tabular}
 \end{table}
 
 
+Rerunning the one-way ANOVA test without the identified outliers still leads to a statistically insignificant p value (p = 0.485862), but leads to a large difference between the p and f values. The means of the non-outlier treatments were found to have an f-ratio value of 0.73194 and a p-value of 0.485862.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\begin{tabular}{@{}lllll@{}}
+                      & \multicolumn{3}{l}{Treatments} &       \\
+                      & 1        & 2        & 3        & Total \\
+N                     & 20       & 21       & 14       & 55    \\
+∑X                    & 410      & 411      & 366      & 1187  \\
+Mean                  & 20.50    & 19.57    & 26.14    & 21.58 \\
+∑X\textasciicircum{}2 & 15268    & 11495    & 13446    & 40209 \\
+SD                    & 19.00    & 13.14    & 17.27    & 16.44
+\end{tabular}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\begin{tabular}{@{}lllll@{}}
+Source             & SS       & df & MS     &             \\
+Between-treatments & 399.52    & 2  & 199.76  & F = 0.73194 \\
+Within-treatments  & 14191.86 & 52 & 272.92 &             \\
+Total              & 14591.38 & 54 &        &            
+\end{tabular}
+\end{table}
+
+Though the resulting session lengths were found to be statistically insignificant, observing graph 1 of session lengths without outliers leads to interesting findings. Variant 1 is clearly seen to have more consistently spaced data points with a lower maximum, whereas both variant 0 and variant 2 had clusters on both the minimum and maximum ends of the graph, exceeding that of variant 1. Relative to variant 1, variants 0 and 2 took longer for several individuals in both cases. However, this pattern cannot be clearly explained due to various potential factors and without further analysis or data manipulation. Referencing figures 3 through 5, variant 1 had less "call-to-action" points and required a further scroll distance to reach the target, whereas variants 0 and 2 both had immediately presented "call-to-action" and additional targets. Without additional measurements and further research, it is unclear whether this is due to friction of the input field on variant 2, color schemes throughout each variant, or the choice of copy in each button/section. A larger sample size and other associated data could be used to identify if these factors had any influence on user behavior. Further analysis of measure of travel/scroll distance and placement of objects could potentially explain the variance.
 
 
-## Discussion and Conclusion
+
+## Discussion and conclusions
+
+A statistically insignificant result does not necessarily mean that the layouts perform equally well. For web interfaces, many confounding variables may be present that impact the length and ease of a user's inquiry. This proposed model could best be applied on a legitimate product/site with more development to analyze how it performs in real world scenarios, and how other factors may influence ease. This paper focused simply on static layouts and the technology used to create the layouts is specifically built for static site generation, leading to already preloaded assets/page content, which may generally reduce time spent. On sites that use asynchronous calls, animation, or real content, these may confound and create a longer lifetime session or cause delay in network requests which also increase session length.
+Additionally, though there is statistical insignificance, this tool can be used to validate custom layouts / designer ideas against tried and true layouts generated from top sites to determine the effectiveness of the layout and the hierarchy of components.
+
+--- WHY IS THE MIDDLE ONE MORE SUCCESSFUL RELATIVELY?? ---
 
 Implications:
+- This paper proposes a potential approach to identifying common layouts, features, etc. in a given domain (e.g., ecommerce, business, healthcare, media) and optimization/analysis of the effectiveness of layouts.
 
 Limitations:
+- too global of a search of sites (instead of looking worldwide, limit sites to some geographic region. different opinions on design, different standards in different places)
+- Too broad in terms of categories; run this research on relevant sites (like if you have ecommerce, focus strictly on ecommerce, etc)
+- kmeans clustering on its own may not have been the best approach, or more clustering may have been necessary. difficult to distinguish the features/objects on overlayed images but also cant manually assess things individually
+- explain how the selection of already computer and interface savvy users may have resulted in figures that were less representative of the actual market
+- not enough pre-existing research to fill in gaps
+- manual analysis may have led to bias in design and elements
 
+future work:
+- possibly use feature / object detection/ extraction for future studies FOR ANALYSIS
+- feature density / topographic images / contour maps FOR ANALYSIS
+- develop some quantitative metric for determing success/effectiveness of a layout after running this model several more times and analyzing how layouts correlate with time
+- figure out *what* exactly makes a layout work and what doesnt
+
+
+<!--!  NOTE FOR MYSELF -->
+
+**
 variant 0 = 8nqXhdl3JD8u
 
 variant 1 = hwVB0eKUehxy
 
 variant 2 = vtc5qYP2r8Ut
+**
 
 
-Heatmaps were installed but due to technical errors did not record behavior. This is a common avenue of identifying/tracking behavior (cite something here)
-
-A one way anova test for analysis of variance on the session lengths was used. It was found that not be to statistically significant at p < .10.
-
-- kmeans may have not been the best approach
-- possibly use feature / object detection/extraction for future studies
 
 
-potential avenues:
-working heatmaps
-feature density / topographic images / contour maps
-develop some quantitative metric for determing success/effectiveness of a layout 
 
 
-This paper proposes a potential approach to identifying common layouts in a given domain (e.g., ecommerce, business, healthcare, media) and optimization/analysis of the effectiveness of layouts.
+heatmaps: This is a common avenue of identifying/tracking behavior (cite something here)
 
-explain how the selection of already computer and interface savvy users may have resulted in figures that were less representative of the actual market
+
+
 
 ## Appendix
 
@@ -380,7 +425,7 @@ month = jan,
 articleno = {Article 29},
 numpages = {4}
 }
-  
+  .
 
 
 
