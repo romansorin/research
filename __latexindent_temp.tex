@@ -1,50 +1,51 @@
-# Textual content for research paper
+% # Textual content for research paper
 
-- [Textual content for research paper](#textual-content-for-research-paper)
-  - [Details](#details)
-    - [Title: Identification and Measurement of Hierarchical Layout Patterns on User Experience](#title-identification-and-measurement-of-hierarchical-layout-patterns-on-user-experience)
-    - [Author: Roman Sorin](#author-roman-sorin)
-    - [Email: roman@romansorin.com](#email-romanromansorincom)
-  - [Abstract](#abstract)
-  - [Introduction](#introduction)
-  - [Method](#method)
-    - [Design](#design)
-    - [Analytical Procedure](#analytical-procedure)
-    - [Experimental Procedure](#experimental-procedure)
-    - [Participants](#participants)
-  - [Results](#results)
-    - [Clustering](#clustering)
-    - [Implementation](#implementation)
-  - [Discussion](#discussion)
-    - [Limitations:](#limitations)
-    - [future work:](#future-work)
-    - [conclusion:](#conclusion)
-  - [Appendix](#appendix)
-  - [References](#references)
+% - [Textual content for research paper](#textual-content-for-research-paper)
+%   - [Details](#details)
+%     - [Title: Identification and Measurement of Hierarchical Layout Patterns on User Experience](#title-identification-and-measurement-of-hierarchical-layout-patterns-on-user-experience)
+%     - [Author: Roman Sorin](#author-roman-sorin)
+%     - [Email: roman@romansorin.com](#email-romanromansorincom)
+%   - [Abstract](#abstract)
+%   - [Introduction](#introduction)
+%   - [Method](#method)
+%     - [Participants](#participants)
+%     - [Design](#design)
+%     - [Analytical Procedure](#analytical-procedure)
+%     - [Experimental Procedure](#experimental-procedure)
+%   - [Results](#results)
+%     - [Clustering](#clustering)
+%     - [Implementation](#implementation)
+%   - [Discussion](#discussion)
+%     - [Limitations:](#limitations)
+%     - [future work:](#future-work)
+%     - [conclusion:](#conclusion)
+%   - [Appendix](#appendix)
+%   - [References](#references)
 
-## Details
+% ## Details
 
-### Title: Identification and Measurement of Hierarchical Layout Patterns on User Experience
+% ### Title: Identification and Measurement of Hierarchical Layout Patterns on User Experience
 
-### Author: Roman Sorin
+% ### Author: Roman Sorin
 
-### Email: roman@romansorin.com
+% ### Email: roman@romansorin.com
 
 
-NOTES:
-- REMOVE THINGS ABOUT HCI
-- REMOVE THINGS ABOUT CNN
-- REMOVE THINGS ABOUT I18N
-- REMOVE THINGS ABOUT DRY, SOLID (?)
-- REPLACE CNN WITH KMEANS AND OTHER RELEVANT INFO
-- GENERALLY CURTAIL INTRODUCTION TO BE MORE RELEVANT TO THE ACTUAL EXPERIMENT AND ANALYSIS PERFORMED
+% NOTES:
+% - REMOVE THINGS ABOUT HCI
+% - REMOVE THINGS ABOUT CNN
+% - REMOVE THINGS ABOUT I18N
+% - REMOVE THINGS ABOUT DRY, SOLID (?)
+% - REPLACE CNN WITH KMEANS AND OTHER RELEVANT INFO
+% - GENERALLY CURTAIL INTRODUCTION TO BE MORE RELEVANT TO THE ACTUAL EXPERIMENT AND ANALYSIS PERFORMED
 
 
 ## Abstract
 
 ## Introduction
 
-\section{Introduction}User experience (UX) has continually developed in the field of software engineering and is seen as being highly integral to the success and usability of an application \cite{10.1016/j.jvlc.2017.08.004}. Alongside concepts such as accessibility and presence of I18n in interfaces, perceived user experiences—notable traits such as design, animation, and usability—are one of the most important aspects to consider in the development and analysis of interactions \cite{benchmarking}. Seen both within and beyond software, reputable products and services are known to utilize effective user experience in creating a product that attracts and retains consumers, subsequently expanding the product influence. User experience drives both offline and online interactions that result in psychological and economic impact on consumers and businesses. User experience is a broad and highly expansive field that can take the form of layouts; colors; fonts; copy; animations; and more granular aspects of design and interaction, making UX highly complex to assess and properly execute. In this study, the impact which hierarchical layout structure and design patterns have will be of focus to approach user experience in web interfaces from a bottom-up approach and architectural stance, addressing the fundamental integration of components in the presentational layer.
+\section{Introduction}
+User experience (UX) has continually developed in the field of software engineering and is seen as being highly integral to the success and usability of an application \cite{10.1016/j.jvlc.2017.08.004}. Alongside concepts such as accessibility and presence of I18n in interfaces, perceived user experiences—notable traits such as design, animation, and usability—are one of the most important aspects to consider in the development and analysis of interactions \cite{benchmarking}. Seen both within and beyond software, reputable products and services are known to utilize effective user experience in creating a product that attracts and retains consumers, subsequently expanding the product influence. User experience drives both offline and online interactions that result in psychological and economic impact on consumers and businesses. User experience is a broad and highly expansive field that can take the form of layouts; colors; fonts; copy; animations; and more granular aspects of design and interaction, making UX highly complex to assess and properly execute. In this study, the impact which hierarchical layout structure and design patterns have will be of focus to approach user experience in web interfaces from a bottom-up approach and architectural stance, addressing the fundamental integration of components in the presentational layer.
 
 From one perspective, user experience is derived from the physiological interaction between user and system \cite{10.1145/2688203}. As interfaces and applications are developed further to suit the needs of consumers and developers alike, there exists a significant need to address the psychological implications of human-computer interaction (HCI) in a more focused and detailed pursuit. Conversely, this continual development of products and experiences creates a significant amount of both practical and technical applications for user experience to manifest itself within, providing for new theses and findings. Within the previous decades, several studies have explored the importance of user experience on this success of products and applications \cite{doi:10.1080/07370024.2011.646927, mousetracking, parallax} in various facets. A common pattern that exists in much of the current research on user experience regards the aesthetics and appearance of a website with consideration of both higher and lower-level abstraction. When analyzing judgment and response by users, aesthetic and appearance is a large determinant in utilization and rates of recurrence \cite{10.1145/3206025.3206039}. In the domain of product and application development, the quality of the experience is extremely vital in progressive rates of user retention, user satisfaction, revenues from sales and advertising, and other analytical measures that are used to determine the relative success of a product or application. Of the serious need for appealing and usable interfaces are businesses that rely on online traffic for customers, and identification and use of these interfaces may provide an advantage over the competition; increasing revenue and attraction by customers to the respective site \cite{10.1145/3206025.3206039}. Consequently, definitive data on optimal layouts by use cases can serve as being beneficial to businesses in both financial and social capital. Moreover, synonymous with the DRY and SOLID principles used in software engineering,designers may look to these data to optimize their processes and focus on more granular parts of the system; and developers can be more oriented towards releasing minimum viable products (MVPs) with confidence and reasoning for utilizing a given layout.
 
@@ -64,6 +65,11 @@ While the fields of software engineering and machine learning have been individu
 In data sets which contain a large number of samples, such as a set of the highest indexed sites on the web (minimum 10,000+ indices), manual identification of both common and more intricate patterns are incredibly difficult to find and waste resources. In contrast, statistical methods and the use of trained algorithmic models will have higher rates of success in identifying patterns that may otherwise not be seen. Thus, there is a chance that integrating algorithmic models into site analysis to identify patterns may more significantly benefit the field of software engineering. Because of the aforementioned limitations of manual analysis, layouts and structures which are deemed to be efficient and successful are strictly subjective and reported on an "at-will" basis; this information may come from individual analyses or findings by user experience researchers within case studies or companies. Thus, this paper proposes an approach to find objective data through the collection of existing sites from Alexa Top Sites \cite{antoniou_2015}, then programmatically collect screenshots of every site, which will then be fed into a model to identify patterns in layouts. By itself, these data will be of little value to the purpose of this paper and therefore requires implementation and an experimental investigation to identify what metrics are associated in practice rather than strict ranking. Thus, this paper seeks to identify the most common layout hierarchies and patterns seen in the highest-indexing sites and measure which UX metrics can be best associated with a given layout or features.
 
 ## Method
+
+### Participants
+
+The study involved 57 individuals who voluntarily participated in the experimental portion of layout analysis. Individuals were age 18 and older, with all participants being from the United States. All participants were expected to have familiarity and experience with navigating layouts and websites, and several individuals had several years of work experience in software engineering and computer science fields. No compensation or reimbursement was provided for involvement in the study. All participants successfully completed the experiment. Participants were recruited through direct and indirect advertisement/sharing of the study. Participation was limited to devices with a minimum screen width of 1024px or a large breakpoint, as only desktop-based layout interfaces were presented. After the experiment, participants were thanked and then provided with an email for further inquiries.
+
 
 ### Design
 
@@ -108,18 +114,13 @@ A threshold of 15 was set through trial-and-error, and comparisons between made 
 
 The experimental portion of the study was conducted through a web application built to host the experiment and information related to the experiment [research-rs]. As seen in figure 1, upon loading the site, participants were presented with a message describing the entire study in brief, directions for participation, and information on what data is collected and how it will be used. Consent was provided by the participant providing their email and then pressing "begin"; no data were collected up to this point. After pressing "begin", the participant was randomly assigned to a layout (interface) and could not assign themselves to another interface. In the directions, participants were instructed to navigate through the interface and identify how to begin using the product either through registration or purchase, and to emulate their typical behavior when they use a real-world application. Each interface contained at least one "call-to-action" section, and at least one "target", which was essentially a button or link that would theoretically allow a user to register for or purchase a product. After pressing a target, the participants were then redirected to the final screen confirming that their participation in the experiment was finished.
 
-
-### Participants
-
-The study involved 57 individuals who voluntarily participated in the experimental portion of layout analysis. Individuals were age 18 and older, with all participants being from the United States. All participants were expected to have familiarity and experience with navigating layouts and websites, and several individuals had several years of work experience in software engineering and computer science fields. No compensation or reimbursement was provided for involvement in the study. All participants successfully completed the experiment. Participants were recruited through direct and indirect advertisement/sharing of the study. Participation was limited to devices with a minimum screen width of 1024px or a large breakpoint, as only desktop-based layout interfaces were presented. After the experiment, participants were thanked and then provided with an email for further inquiries.
-
 ## Results
 
 This section presents the results of both portions of the study, including the numbers of sites throughout processing stages, number of clusters and sites within each cluster, and the observed behaviors of users based on session lengths. Overall, it was shown that there was a minimal variance of the session lengths in the layouts as they compare to each other, and that layout did not affect a user's ability to complete the task as it relates to time.
 
 ### Clustering
 
-Following the collection of data from the AWS Alexa Top Sites API [aws], the datasets were run through the image processing and filtering stages. To simulate the importance of this processing stage as is relates to the use of data, Table 1 {stage-table} shows the number of sites used in the analytical portion of the experiment as it relates to each stage. In stage 0, which is initial data collection and parsing of the API, 1002 sites were returned. Stage 1 concerns the removal of inaccessible and inactive sites as the application collected screenshots of each site, resulting in 975 sites being left for processing. Stage 2 concerns the comparison of the same root domain sites using the image similarity API [api] and an arbitrarily set threshold of 15, eliminating subdomains and geographical TLDs with content that too closely resembled that of the higher ranking root domain. In addition to similarity processing, reshaping of the resulting screenshots led to those which did not exceed the minimum height of 1440px to be removed, reducing the sample size to 863 sites. These remaining screenshots were deemed unique and fit the minimum dimensions after being converted into a two-dimensional array enough to be clustered using the K-means algorithm.
+Following the collection of data from the AWS Alexa Top Sites API [aws], the datasets were run through the image processing and filtering stages. To simulate the importance of this processing stage as is relates to the use of data, Table 1 {stage-table} shows the number of sites used in the analytical portion of the experiment as it relates to each stage. In stage 0, which is initial data collection and parsing of the API, 1002 sites were returned. Stage 1 concerns the removal of inaccessible and inactive sites as the application collected screenshots of each site, resulting in 975 sites being left for processing. Stage 2 concerns the comparison of the same root domain sites using the image similarity API [api] and an arbitrarily set threshold of 15, eliminating subdomains and geographical TLDs with content that too closely resembled that of the higher ranking root domain. In addition to similarity processing, reshaping of the resulting screenshots led to those which did not exceed the minimum height of 1440px to be removed, reducing the sample size to 863  sites. These remaining screenshots were deemed unique and fit the minimum dimensions after being converted into a two-dimensional array enough to be clustered using the K-means algorithm.
 
 \begin{table}[]
 \caption{}
@@ -133,7 +134,7 @@ Stage & n    \\ \midrule
 \end{tabular}
 \end{table}
 
-Due to a lack of appropriately typed data to apply either the elbow method [some source here on what it is] or gap method [some source here on what it is] to identify the optimal number of clusters to be used in K-means, an arbitrary but reasonable value of 4 was selected, outputting four groups of clustered (similar) images. This K value of 4 was most reasonable for simplicity and ease of evaluation. Table 2 {cluster-table} illustrates the number of images per cluster after running the K-means model, where cluster 0 had n = 242 images; cluster 1 had n = 125 images; cluster 2 had n = 111 images; cluster 3 had n = 385 images. To ease the manual analysis of cluster results, such as in the case of cluster 3, cluster results were iterated over and a weighted image was generated for every 50 images, defining a "subcluster". Images within a subcluster were blended using the OpenCV addWeighted() function [opencv], which utilizes the following formula, where both \alpha and \beta represent the intended weight of source images f_0(x) and f_1(x), and \gamma = 0 implicitly:
+Due to a lack of appropriately typed data to apply either the elbow method [some source here on what it is] or gap method [some source here on what it is] to identify the optimal number of clusters to be used in K-means, an arbitrary but reasonable value of 4 was selected, outputting four groups of clustered (similar) images. This K value of 4 was most reasonable for simplicity and ease of evaluation. Table 2 {cluster-table} illustrates the number of images per cluster after running the K-means model, where cluster 0 had n = 242 images; cluster 1 had n = 125 images; cluster 2 had n = 111 images; and cluster 3 had n = 385 images. To ease the manual analysis of cluster results, such as in the case of cluster 3, cluster results were iterated over and a weighted image was generated for every 50 images, defining a "subcluster". Images within a subcluster were blended using the OpenCV addWeighted() function [opencv], which utilizes the following formula, where both \alpha and \beta represent the intended weight of source images f_0(x) and f_1(x), and \gamma = 0 implicitly:
 
 \[dst = \alpha f_0(x) + \beta f_1(x) + \gamma\]
 
@@ -191,7 +192,9 @@ Variant & 0       & 1        & 2      \\ \midrule
 \end{tabular}
 \end{table}
 
+
 Using a one-way ANOVA statistical test, analysis of the session length associated with three variants showed that the compared interface variances were found to be statistically insignificant at p < .10. Table 4 {descriptive-stats-variants-table} shows descriptive statistics associated with each variant, while table 4 {anova-table} shows information relevant to the ANOVA test. The means of the three treatment groups were found to have a p-value of 0.485862, and an f-ratio value of 0.73194. While the means were relatively similar across treatment groups (T_1 = 23.33, T_2 = 23.55, T_3 = 26.14), the potential effect of the extreme values is unclear unless the test is rerun without the outliers. Table 5 {anova-between-table} shows additional information relevant to the ANOVA test.
+
 
 \begin{table}[]
 \caption{Descriptive statistics for recorded data points of each variant.}
@@ -204,6 +207,7 @@ V_1 & 21 & 19.57 & 3   & 45 & 13.14 & 17   \\
 V_2 & 14 & 26.14 & 3   & 54  & 17.27 & 30.5   \\ \bottomrule
 \end{tabular}
 \end{table}
+
 
 \begin{table}[]
 \begin{tabular}{@{}lllll@{}}
@@ -232,15 +236,15 @@ However, this pattern cannot be clearly explained due to various potential facto
 
 
 ## Discussion
+As internet usage continues to grow and become more prevalent worldwide, it becomes more and more imperative to abstract potential approaches and factors that influence the success of products. In particular, this study aims to converge focuses on user interface — such as UX metrics and layout hierarchy — with the potential benefits of mathematical or statistical optimization. The use of data is not a new concept in identifying the success of products and related items within businesses, however, there is yet some model to describe how layout hierarchy or other factors may potentially influence overall user experience. As suchy, this paper proposes a potential approach to identifying common layouts and features in a given domain (e.g., ecommerce, business, healthcare, media) and optimization with subsequent analysis of the effectiveness of layouts. For web interfaces, many confounding variables may be present that impact the length and ease of a user's site usage. This proposed model would do best if applied on a legitimate product orsite with more development to analyze how it performs in real world scenarios, and how other known factors may influence ease. 
 
-As web applications continue to advance, it becomes more and more imperative to abstract potential approaches and factors that influence the success of products. In particular, this study aims to converge focuses on user interface — such as UX metrics and layout hierarchy — with the potential benefits of mathematical or statistical optimization. The use of data is not a new concept in identifying the success of products and related items within businesses, however, there is yet some metric to describe how layout hierarchy or other factors may potentially influence overall user experience. As such, this paper proposes a potential approach to identifying common layouts and features in a given domain and optimization with subsequent analysis of the effectiveness of layouts. For web interfaces, many confounding variables may be present that impact the length and ease of a user's site usage. This proposed model would do best if applied on a legitimate product or site with more development to analyze how it performs in real world scenarios, and how other known factors may influence ease. 
 
-Though there is statistical insignificance in this data, this model could be used to validate new layouts against common layouts extracted from top sites to determine the effectiveness of the layout. Though not evident without abstraction beyond statistical results, hierarchy may have been influential in the results of this study, and present itself at a greater scale with a higher sample size or different application of this proposal. The "how" and "where" representation of different components and hierarchical features in each variant likely held an influence on the distribution of data, but more research is required to make the exact factors known.
+This paper focused simply on static layouts and the technology used to create the layouts is specifically built for static site generation, leading to already preloaded assets/page content, which may generally reduce time spent. On sites that use asynchronous calls, animation, or real content, these may confound and create a longer lifetime session or cause delay in network requests which also increase session length.
+Additionally, though there is statistical insignificance, this tool can be used to validate custom layouts / designer ideas against tried and true layouts generated from top sites to determine the effectiveness of the layout and the hierarchy of components. Though not evident without abstraction beyond statistical results, hierarchy may have been influential in the results of this study, and present itself at a greater scale with a higher sample size or different application of this proposal. The "how" and "where" representation of different components and hierarchical features in each variant likely held an influence on the distribution of data, but more research is required to make the exact factors known.
 
-As mentioned before, variant 1 is of particular interest. Despite having a reduced number of successful targets to click and more scroll distance required to complete the task, leading to more time elapsed, data was more consistent and did not broach the upper ends of the distribution like variants 0 and 2 did. This display of results is unexpected: variant 0 had a large section about a fourth of the height into the interface that allowed users to get started with the product, and variant 2 had a direct call-to-action within the initial viewport. Despite variants 0 and 2 being more accessible and intuitively quicker to get started with, more participants were seen to have trouble with these variants — either figuring out how to use them, or turned away by the format and display of information.
+As mentioned before, variant 1 is of particular interest. Despite having a reduced number of successful targets to click and more scroll distance required to complete the task, leading to more time elapsed, data was more consistent and did not broach the upper ends of the distribution like variants 0 and 2 did. This display of results is unexpected: variant 0 had a large section about a fourth into the interface that allowed users to get started with the product automatically, and variant 2 had a direct call-to-action within the initial viewport. Despite variants 0 and 2 being technically more accessible and intuitively quicker to get started with, more participants were seen to have trouble with these variants — either figuring out how to use them, or turned away by the format and display of information.
 
 ### Limitations:
-
 As with any study, this study suffers from several limitations that may have negatively influenced results. Beginning with analysis (stage 0), it is possible that too global of a site data collection was specified; the globally highest-indexing sites were returned, and not those specific to a given region. Due to cultural differences and availability of engineering, research, and design, different regions have different opinions on design and different standards on how information should be best presented. Future research and retrials of this proposed model should specify a given region, such as the U.S. or Canada. In addition to selecting too large of a ranking range, this initial study was clearly too broad in terms of categories. While the AWS Alexa Top Sites API does not provide data based on category of site (such as ecommerce, media, news, etc.), a potential solution could be to cross-analyze/join APIs and identify the category based on a single URL. By specifying region and category, businesses, engineers, designers, and researchers can better understand how to present information to their target audience by demographic and focus.
 
 A single K-means clustering in stage 2 may not have been a sufficient or best possible approach to identifying commonalities in images. While some basic image processing and filtering was applied, there are likely other ways to process images for the K-means algorithm to better cluster, such as applying hidden layers using a CNN, or potentially training another K-means model. It may be a better approach to instead focus on individual parts of hierarchy within a layout and cluster those, rather than doing full pages: such as the hero, headers, footers, etc. These cluster data can then be combined to identify the "best" layout by working incrementally. Furthermore, common features or objects can be difficult to detect even in subclusters of 50 overlayed images. Considering how limited this dataset was and the general manual time required to be invested, it would be impractical — or even impossible — to run manual analysis of overlayed images on a dataset of 500,000 sites. It is unclear how this paper's approach of "subclustering" was or wasn't useful in identifying common features within a cluster, and if it could have been avoided entirely if another model was used alongside the Keras VGG16. For the purpose of clarity and logic in these interfaces, manual analysis likely led to a degree of bias in design and elements, especially since elements had to be recreated from the clusters/subclusters (no elements or copy could be directly copied), which means that the researcher's design tendencies may have affected user experience positively or negatively.
@@ -250,16 +254,10 @@ Experimentally, the choice of participant demographic and previous exposure to i
 Generally, this study's methods suffered due to a lack of pre-existing research to fill in gaps of inquiry and approaches. In several areas, from data collection to image processing to experimentation, this study creates potential methods and procedures for use by the software engineering community in varying aspects. Replication of this study with more time and larger datasets, as well as addressing the aforementioned limitations of querying category and demographic could very potentially yield results that benefit the software engineering and design community as a whole.
 
 ### future work:
-
-There are several avenues of improvement and future inquiry in both analytical and experimental contexts. It is highly likely that relying strictly on a K-means algorithm and manual analysis of clusters led to misrepresentation of what the most common layouts really are, or that they could have been considerably more detailed than they were in this study. With that in mind, inclusion of other machine learning based methods and models — such as feature and object detection — in addition to more developed clustering models may allow for better understanding what common features exist in layouts, and how they work together to build hierarchically effective layouts.
-
-In addition to simple clustering and image overlays, the presence of features could potentially be represented by "density", which would require a quantitative and empirical metric of its own. This density could describe features on an interface, which could be aided by "contour maps" to illustrate where components are commonly placed as another measure of layout effectiveness. Pairing this proposed model with widely utilized eye and mouse tracking could be incredibly fruitful, and would allow this model to be ran several more times on a greater scale, providing more data to analyze and generate potential correlations from.
-
-With these increased trials, there is potential to describe the results with a quantitative metric, that may be used to predict the effectiveness of a layout as it relates to UX metrics. Implicatively, this research would allow businesses to focus less on A/B variant testing, and instead explain their decisions through a predictive quantitative metric, providing focus on building products whilst optimizing interfaces.
+There are several avenues of improvement and future inquiry in both analytical and experimental contexts. It is highly likely that relying strictly on a KMeans algorithm and manual analysis of clusters led to misrepresentation of what the most common layouts really are, or that they could have been considerably more detailed than they were in this study. With that in mind, inclusion of other machine learning based methods and models — such as feature and object detection — in addition to more developed clustering models may allow for better understanding what common features or components exist in layouts, and how they work together to build hierarchically effective layouts. In addition to simply clustering and using image overlays, the presence of features could potentially be represented by "density", which would require a quantitative and empirical metric of its own. This density could describe features on an interface, which could lead to the creation of contour maps to illustrate where components are commonly placed as another abstracted measure of layout effectiveness. Pairing this proposed model with both proven and widely utilized eye and mouse tracking could be incredibly fruitful, and would allow this model to be ran several more times on a greater scale, providing more data to analyze and generate potential correlations from. With these increased trials, some quantitative metric could potentially be created to determine and predict the success or effectiveness of a layout depending on where objects are located, and of what type. Doing this allow would allow for designers and engineers to understand what exactly leads to one layout being more effective than another, and may potentially produce gains for businesses who would like to most quickly optimize the time it takes for a user to get started with their product, or to read over the presented information as quickly as possible. Doing this research would allow businesses to focus less on constant A/B variant testing of their own, and instead to explain their decisions through a quantitative metric and spend more time developing their product instead of optimizing landing page interfaces.
 
 ### conclusion:
-
-Overall, it's important that the methodology proposed within this study is replicated due to its potential benefit to real-world products and the software engineering community. It is also important to recognize that within this context, both qualitative abstract analysis and quantitative statistical testing is required to identify the effectiveness of a layout, and to identify potential factors that may lead to optimization. Informally, both are applied in isolated case studies, but there is yet to be an abundance of research that blends both to improve the quality of interfaces with widely available models and procedures.
+Overall, it's imperative that more research in this field is done and that this study is replicated due to its potential applicability to real-world products and its benefits to the software engineering community. It is also important to recognize that within this context, both qualitative abstract analysis and quantitative statistical testing is required to identify the effectiveness of a layout, and to identify potential factors that may lead to optimization. Informally, both are applied in isolated case studies throughout the community, but there is yet to be an abundance of research that blends both to improve the quality of interfaces with widely available models and procedures.
 
 
 <!--!  NOTE FOR MYSELF -->
