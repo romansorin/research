@@ -84,18 +84,107 @@ Ideas for data analysis:
 - correlation between session time and variant; abstract the reasoning out for whyu this could be (i.e., one variant has clearly presented information CTA over another)
 
 
-Stage 0 site count:
-1002
-Stage 1 site count:
-975
-Stage 2 site count:
-908
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\begin{tabular}{@{}ll@{}}
+Stage & n    \\
+0     & 1002 \\
+1     & 975  \\
+2     & 908 
+\end{tabular}
+\end{table}
 
-Cluster counts:
-0 : 242 | 5 subclusters
-1 : 125 | 3 subcl.
-2 : 111 | 3 subcl.
-3 : 385 | 8 subcl.
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\begin{tabular}{@{}llll@{}}
+       & V(0)  & V(1)  & V(2)  \\
+n      & 21    & 22    & 14    \\
+Mean   & 23.33 & 23.55 & 26.14 \\
+Min    & 2     & 3     & 3     \\
+Max    & 80    & 107   & 54    \\
+SD     & 22.62 & 22.62 & 17.27 \\
+Median & 17    & 17.5  & 30.5 
+\end{tabular}
+\end{table}
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\begin{tabular}{@{}lll@{}}
+Cluster & n   & Subclusters \\
+0       & 242 & 5           \\
+1       & 125 & 3           \\
+2       & 111 & 3           \\
+3       & 385 & 8          
+\end{tabular}
+\end{table}
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\begin{tabular}{@{}llll@{}}
+Variant & 0       & 1        & 2      \\
+        & \multicolumn{3}{l}{Seconds} \\
+        & 7       & 12       & 40     \\
+        & 5       & 45       & 37     \\
+        & 3       & 3        & 6      \\
+        & 60      & 5        & 38     \\
+        & 59      & 9        & 3      \\
+        & 24      & 3        & 37     \\
+        & 5       & 19       & 47     \\
+        & 55      & 22       & 54     \\
+        & 30      & 11       & 37     \\
+        & 24      & 107      & 10     \\
+        & 80      & 15       & 17     \\
+        & 5       & 35       & 12     \\
+        & 3       & 18       & 24     \\
+        & 2       & 29       & 4      \\
+        & 35      & 43       &        \\
+        & 28      & 9        &        \\
+        & 15      & 7        &        \\
+        & 9       & 12       &        \\
+        & 6       & 26       &        \\
+        & 18      & 17       &        \\
+        & 17      & 38       &        \\
+        &         & 33       &       
+\end{tabular}
+\end{table}
+
+ONE-WAY ANOVA VARIANCE CALCULATIONS:
+F-statistic value = 0.08421
+P-value = 0.91936
+	
+The f-ratio value is 0.08421. The p-value is .919361. The result is not significant at p < .10.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\begin{tabular}{@{}lllll@{}}
+Source             & SS       & df & MS     &             \\
+Between-treatments & 77.53    & 2  & 38.77  & F = 0.08421 \\
+Within-treatments  & 24859.84 & 54 & 460.37 &             \\
+Total              & 24937.37 & 56 &        &            
+\end{tabular}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\begin{tabular}{@{}lllll@{}}
+                      & \multicolumn{3}{l}{Treatments} &       \\
+                      & 1        & 2        & 3        & Total \\
+N                     & 21       & 22       & 14       & 57    \\
+∑X                    & 490      & 518      & 366      & 1374  \\
+Mean                  & 23.33    & 23.55    & 26.14    & 24.11 \\
+∑X\textasciicircum{}2 & 21668    & 22944    & 13446    & 58058 \\
+SD                    & 22.62    & 22.62    & 17.27    & 21.10
+\end{tabular}
+\end{table}
+
 
 Implications:
 
@@ -103,147 +192,12 @@ Limitations:
 
 Directions for research:
 
-8nqXhdl3JD8u:
-7
-5
-3
-60
-59
-24
-5
-55
-30
-24
-80
-5
-3
-2
-35
-28
-15
-9
-6
-18
-17
+variant 0 = 8nqXhdl3JD8u
 
+variant 1 = hwVB0eKUehxy
 
-Minimum	min =	2
-Maximum	max =	80
-Range	range =	78
-Size	n =	21
-Sum	sum =	490
-Mean	x¯¯¯ =	23.3333333333
-Median	x˜ =	17
-Mode	mode =	5
-Standard Deviation	s =	22.621523674
-Variance	s2 =	511.733333333
-Mid Range	MR =	41
-Quartiles		Quartiles:
-Q1 --> 5
-Q2 --> 17
-Q3 --> 32.5
-Interquartile Range	IQR =	27.5
+variant 2 = vtc5qYP2r8Ut
 
-hwVB0eKUehxy:
-12
-45
-3
-5
-9
-3
-19
-22
-11
-107
-15
-35
-18
-29
-43
-9
-7
-12
-26
-17
-38
-33
-
-Minimum	min =	3
-Maximum	max =	107
-Range	range =	104
-Size	n =	22
-Sum	sum =	518
-Mean	x¯¯¯ =	23.5454545455
-Median	x˜ =	17.5
-Mode	mode =	12, 3, 9
-Standard Deviation	s =	22.6226335731
-Variance	s2 =	511.783549784
-Mid Range	MR =	55
-Quartiles		Quartiles:
-Q1 --> 9
-Q2 --> 17.5
-Q3 --> 33
-Interquartile Range	IQR =	24
-
-vtc5qYP2r8Ut:
-40
-37
-6
-38
-3
-37
-47
-54
-37
-10
-17
-12
-24
-4
-
-Minimum	min =	3
-Maximum	max =	54
-Range	range =	51
-Size	n =	14
-Sum	sum =	366
-Mean	x¯¯¯ =	26.1428571429
-Median	x˜ =	30.5
-Mode	mode =	37
-Standard Deviation	s =	17.2709500111
-Variance	s2 =	298.285714286
-Mid Range	MR =	28.5
-Quartiles		Quartiles:
-Q1 --> 10
-Q2 --> 30.5
-Q3 --> 38
-Interquartile Range	IQR =	28
-
-+ exp. anova
-+ 2nd parsed_res data
-+ initial # -> parsed/clean # -> duped (domains) # -> cluster count -> subcluster count
-
-Show example of subcluster layering process
-Show media example (leave built variants in appendix?)
-
-ONE-WAY ANOVA VARIANCE CALCULATIONS:
-F-statistic value = 0.08421
-P-value = 0.91936
-
-Summary of Data						
-	Treatments					
-	1	2	3	4	5	Total
-N	21	22	14			57
-∑X	490	518	366			1374
-Mean	23.3333	23.5455	26.1429			24.105
-∑X2	21668	22944	13446			58058
-Std.Dev.	22.6215	22.6226	17.271			21.1024
-
-Result Details				
-Source	SS	df	MS	
-Between-treatments	77.5329	2	38.7665	F = 0.08421
-Within-treatments	24859.8355	54	460.3673	
-Total	24937.3684	56		
-The f-ratio value is 0.08421. The p-value is .919361. The result is not significant at p < .10.
 
 Heatmaps were installed but due to technical errors did not record behavior. This is a common avenue of identifying/tracking behavior (cite something here)
 
@@ -478,5 +432,14 @@ month={June},}
   year={2017}
 }
 
+@misc{sorin_2020, title={romansorin/research-screenshot}, url={https://github.com/romansorin/research-screenshot}, journal={GitHub}, author={Sorin, Roman M}, year={2020}, month={May}}
+
+@misc{hotjar, title={Website Heatmaps & Behavior Analytics Tools}, url={https://www.hotjar.com/}, journal={Hotjar}}
+
+@misc{sorin, title={Home}, url={https://research.romansorin.com/}, journal={Home | rs Research}, author={Sorin, Roman M}}
+
+@misc{google, url={https://firebase.google.com/}, journal={Google}, publisher={Google}}
+
+@misc{google, title={Google Analytics}, url={https://analytics.google.com/analytics/web/}, journal={Google}, publisher={Google}}
 Style: IEEE
 Word Count: 1204
